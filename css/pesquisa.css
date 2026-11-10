@@ -1,0 +1,491 @@
+
+/* ==========================================
+   QUASE INÉDITO — PÁGINA DE PESQUISA
+========================================== */
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+:root {
+    --pesquisa-creme: #F8F2E9;
+    --pesquisa-laranja: #F18B4B;
+    --pesquisa-vinho: #6B2927;
+    --pesquisa-escuro: #171313;
+    --pesquisa-branco: #FFFFFF;
+    --pesquisa-borda: #E8DCCE;
+    --pesquisa-suave: #8A7770;
+}
+
+/* ==========================================
+   ESTRUTURA GERAL
+========================================== */
+
+.pagina-pesquisa {
+    width: 92%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 60px 0 100px;
+    color: var(--pesquisa-escuro);
+}
+
+/* ==========================================
+   APRESENTAÇÃO
+========================================== */
+
+.cabecalho-pesquisa {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 55px 35px;
+    margin-bottom: 38px;
+    background: var(--pesquisa-creme);
+    background-image: url("../assets/Texture.WebP");
+    background-position: center;
+    background-size: cover;
+    border: 1px solid var(--pesquisa-borda);
+    border-radius: 22px;
+    text-align: center;
+}
+
+.cabecalho-pesquisa::after {
+    content: "PESQUISA";
+    position: absolute;
+    right: -15px;
+    bottom: -30px;
+    color: rgba(107, 41, 39, 0.045);
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(4rem, 12vw, 9rem);
+    font-weight: 700;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.cabecalho-pesquisa .subtitulo {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 12px;
+    color: var(--pesquisa-vinho);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.cabecalho-pesquisa h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 12px;
+    color: var(--pesquisa-vinho);
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.cabecalho-pesquisa p {
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--pesquisa-suave);
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* ==========================================
+   FILTROS
+========================================== */
+
+.filtros-pesquisa {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 13px;
+    padding: 19px 22px;
+    margin-bottom: 24px;
+    background: var(--pesquisa-creme);
+    border: 1px solid var(--pesquisa-borda);
+    border-radius: 13px;
+}
+
+.filtros-pesquisa label {
+    color: var(--pesquisa-vinho);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.filtros-pesquisa select {
+    min-width: 220px;
+    max-width: 100%;
+    padding: 11px 38px 11px 13px;
+    color: var(--pesquisa-escuro);
+    background-color: var(--pesquisa-branco);
+    border: 1px solid var(--pesquisa-borda);
+    border-radius: 8px;
+    font: inherit;
+    font-size: 0.88rem;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.filtros-pesquisa select:focus {
+    border-color: var(--pesquisa-laranja);
+    box-shadow: 0 0 0 3px rgba(241, 139, 75, 0.14);
+}
+
+/* ==========================================
+   QUANTIDADE DE RESULTADOS
+========================================== */
+
+.quantidade-livros {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 25px;
+    color: var(--pesquisa-suave);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.quantidade-livros::before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 21px;
+    background: var(--pesquisa-laranja);
+    border-radius: 5px;
+}
+
+/* ==========================================
+   GRADE DE LIVROS
+========================================== */
+
+#resultados-pesquisa.livros-lista {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 25px;
+}
+
+/* ==========================================
+   CARTÕES
+========================================== */
+
+#resultados-pesquisa .livro-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 15px;
+    overflow: hidden;
+    background: var(--pesquisa-branco);
+    border: 1px solid var(--pesquisa-borda);
+    border-radius: 15px;
+    box-shadow: 0 3px 12px rgba(23, 19, 19, 0.035);
+    transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+}
+
+#resultados-pesquisa .livro-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(241, 139, 75, 0.65);
+    box-shadow: 0 9px 23px rgba(23, 19, 19, 0.09);
+}
+
+#resultados-pesquisa .livro-card-conteudo {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    color: inherit;
+    text-align: center;
+    text-decoration: none;
+}
+
+#resultados-pesquisa .livro-card-conteudo img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    margin-bottom: 17px;
+    object-fit: contain;
+    background: var(--pesquisa-creme);
+    border-radius: 9px;
+    transition: transform 0.25s;
+}
+
+#resultados-pesquisa .livro-card:hover .livro-card-conteudo img {
+    transform: scale(1.025);
+}
+
+#resultados-pesquisa .livro-card-conteudo h3 {
+    width: 100%;
+    min-height: 44px;
+    margin: 0 0 7px;
+    overflow: hidden;
+    color: var(--pesquisa-vinho);
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+#resultados-pesquisa .livro-card-conteudo p {
+    width: 100%;
+    min-height: 21px;
+    margin: 0 0 12px;
+    overflow: hidden;
+    color: var(--pesquisa-suave);
+    font-size: 0.84rem;
+    line-height: 1.4;
+}
+
+#resultados-pesquisa .livro-card-conteudo strong {
+    margin-top: auto;
+    margin-bottom: 16px;
+    color: var(--pesquisa-escuro);
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+/* ==========================================
+   BOTÃO VER DETALHES
+========================================== */
+
+#resultados-pesquisa .livro-card .botao-comprar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 13px;
+    color: white;
+    background: var(--pesquisa-vinho);
+    border: none;
+    border-radius: 8px;
+    font-size: 0.86rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+}
+
+#resultados-pesquisa .livro-card .botao-comprar:hover {
+    background: #843B35;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   NENHUM RESULTADO
+========================================== */
+
+#resultados-pesquisa .mensagem-sem-resultados {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    padding: 45px 25px;
+    background:
+        linear-gradient(
+            rgba(248, 242, 233, 0.93),
+            rgba(248, 242, 233, 0.93)
+        ),
+        url("../assets/Texture.WebP") center / cover;
+    border: 1px dashed #D7C5B3;
+    border-radius: 17px;
+    text-align: center;
+}
+
+#resultados-pesquisa .mensagem-sem-resultados::before {
+    content: "⌕";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 18px;
+    color: var(--pesquisa-vinho);
+    background: rgba(241, 139, 75, 0.14);
+    border-radius: 50%;
+    font-family: "Fredoka", sans-serif;
+    font-size: 3rem;
+}
+
+#resultados-pesquisa .mensagem-sem-resultados h2 {
+    margin: 0 0 10px;
+    color: var(--pesquisa-vinho);
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.55rem;
+    font-weight: 600;
+}
+
+#resultados-pesquisa .mensagem-sem-resultados p {
+    max-width: 430px;
+    margin: 0;
+    color: var(--pesquisa-suave);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   VOLTAR À PÁGINA INICIAL
+========================================== */
+
+.pagina-pesquisa > .botao-voltar-catalogo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35px;
+    padding: 12px 19px;
+    color: var(--pesquisa-vinho);
+    background: transparent;
+    border: 1px solid var(--pesquisa-vinho);
+    border-radius: 9px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.pagina-pesquisa > .botao-voltar-catalogo:hover {
+    color: white;
+    background: var(--pesquisa-vinho);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   ACESSIBILIDADE
+========================================== */
+
+.pagina-pesquisa button:focus-visible,
+.pagina-pesquisa a:focus-visible,
+.pagina-pesquisa select:focus-visible {
+    outline: 3px solid var(--pesquisa-laranja);
+    outline-offset: 4px;
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 1050px) {
+    #resultados-pesquisa.livros-lista {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 750px) {
+    .pagina-pesquisa {
+        width: 92%;
+        padding: 40px 0 75px;
+    }
+
+    .cabecalho-pesquisa {
+        padding: 43px 25px;
+        border-radius: 17px;
+    }
+
+    #resultados-pesquisa.livros-lista {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 17px;
+    }
+
+    #resultados-pesquisa .livro-card-conteudo img {
+        height: 190px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pagina-pesquisa {
+        width: 94%;
+        padding-top: 30px;
+    }
+
+    .cabecalho-pesquisa {
+        padding: 35px 20px;
+    }
+
+    .cabecalho-pesquisa h1 {
+        font-size: 2.1rem;
+    }
+
+    .filtros-pesquisa {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 9px;
+        padding: 16px;
+    }
+
+    .filtros-pesquisa select {
+        width: 100%;
+        min-width: 0;
+    }
+
+    #resultados-pesquisa.livros-lista {
+        gap: 12px;
+    }
+
+    #resultados-pesquisa .livro-card {
+        padding: 10px;
+        border-radius: 12px;
+    }
+
+    #resultados-pesquisa .livro-card-conteudo img {
+        height: 155px;
+        margin-bottom: 12px;
+    }
+
+    #resultados-pesquisa .livro-card-conteudo h3 {
+        font-size: 0.98rem;
+    }
+
+    #resultados-pesquisa .livro-card-conteudo p {
+        font-size: 0.78rem;
+    }
+
+    #resultados-pesquisa .livro-card-conteudo strong {
+        font-size: 1rem;
+    }
+
+    #resultados-pesquisa .livro-card .botao-comprar {
+        min-height: 38px;
+        padding: 8px;
+        font-size: 0.78rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #resultados-pesquisa .livro-card,
+    #resultados-pesquisa .livro-card-conteudo img,
+    #resultados-pesquisa .livro-card .botao-comprar,
+    .pagina-pesquisa > .botao-voltar-catalogo {
+        transition: none;
+    }
+}

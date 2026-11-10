@@ -1,0 +1,740 @@
+
+/* ==========================================
+   QUASE INÉDITO — PÁGINA DE DETALHES
+========================================== */
+
+/* ===== FONTES ===== */
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Light.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   IDENTIDADE VISUAL
+========================================== */
+
+:root {
+    --livro-creme: #F8F2E9;
+    --livro-laranja: #F18B4B;
+    --livro-vinho: #6B2927;
+    --livro-escuro: #171313;
+    --livro-branco: #FFFFFF;
+
+    --livro-textura: url("../assets/Texture.WebP");
+
+    --livro-sombra:
+        0 12px 35px rgba(23, 19, 19, 0.08);
+
+    --livro-raio: 18px;
+}
+
+
+/* ==========================================
+   ESTRUTURA PRINCIPAL
+========================================== */
+
+.pagina-detalhe-livro {
+    width: min(1160px, 92%);
+    margin: 0 auto;
+    padding: 45px 0 85px;
+
+    color: var(--livro-escuro);
+}
+
+
+/* ===== VOLTAR À VITRINE ===== */
+
+.voltar-vitrine {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 28px;
+
+    color: var(--livro-vinho);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.voltar-vitrine:hover {
+    color: var(--livro-laranja);
+}
+
+
+/* ==========================================
+   CARTÃO DE DETALHES
+========================================== */
+
+#detalhes-livro {
+    width: 100%;
+}
+
+.detalhe-livro-container {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+    align-items: start;
+    gap: 55px;
+
+    padding: 45px;
+
+    background-color: var(--livro-branco);
+    background-image: var(--livro-textura);
+    background-size: 650px;
+
+    border: 1px solid rgba(107, 41, 39, 0.10);
+    border-radius: var(--livro-raio);
+
+    box-shadow: var(--livro-sombra);
+}
+
+
+/* ==========================================
+   CAPA DO LIVRO
+========================================== */
+
+.detalhe-livro-imagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 440px;
+    padding: 25px;
+
+    background-color: var(--livro-creme);
+    background-image: var(--livro-textura);
+    background-size: 450px;
+
+    border-radius: 14px;
+    border: 1px solid rgba(107, 41, 39, 0.10);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.detalhe-livro-imagem::before {
+    content: "";
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -100px;
+    right: -85px;
+
+    border: 1px solid rgba(107, 41, 39, 0.15);
+    border-radius: 50%;
+}
+
+.detalhe-livro-imagem img {
+    display: block;
+
+    width: auto;
+    max-width: 100%;
+    max-height: 390px;
+
+    object-fit: contain;
+    border-radius: 5px;
+
+    box-shadow:
+        8px 12px 22px rgba(23, 19, 19, 0.18);
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ==========================================
+   ETIQUETAS DE MODALIDADE
+========================================== */
+
+.detalhe-livro-identificadores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    width: 100%;
+    margin-bottom: 17px;
+}
+
+.etiqueta-modalidade {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 7px 13px;
+
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+
+/* ===== VENDA ===== */
+
+.etiqueta-modalidade.venda {
+    color: var(--livro-vinho);
+    background-color: rgba(241, 139, 75, 0.16);
+    border-color: rgba(241, 139, 75, 0.4);
+}
+
+
+/* ===== TROCA ===== */
+
+.etiqueta-modalidade.troca {
+    color: #355C50;
+    background-color: #E5F0E9;
+    border-color: #B8D3C5;
+}
+
+
+/* ===== DOAÇÃO ===== */
+
+.etiqueta-modalidade.doacao {
+    color: #79552A;
+    background-color: #F6EBD5;
+    border-color: #E4D1A9;
+}
+
+
+/* ==========================================
+   CATEGORIA
+========================================== */
+
+.detalhe-livro-categoria {
+    display: inline-block;
+
+    margin-bottom: 16px;
+    padding: 7px 14px;
+
+    color: var(--livro-vinho);
+    background-color: rgba(241, 139, 75, 0.15);
+
+    border: 1px solid rgba(241, 139, 75, 0.35);
+    border-radius: 5px;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+
+/* ==========================================
+   TÍTULO E SELO OFICIAL
+========================================== */
+
+.detalhe-livro-titulo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+
+    width: 100%;
+}
+
+.detalhe-livro-titulo h1 {
+    flex: 0 1 auto;
+
+    min-width: 0;
+    margin: 0;
+
+    color: var(--livro-vinho);
+
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    line-height: 1.12;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ===== PRODUTO OFICIAL ===== */
+
+.selo-oficial-titulo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    flex-shrink: 0;
+
+    padding: 5px 9px;
+
+    color: var(--livro-vinho);
+    background-color: rgba(241, 139, 75, 0.12);
+
+    border: 1px solid rgba(107, 41, 39, 0.18);
+    border-radius: 5px;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.selo-oficial-titulo img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+
+/* ===== ANÚNCIO DA COMUNIDADE ===== */
+
+.identificacao-anuncio-usuario {
+    display: inline-flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    padding: 6px 10px;
+
+    color: var(--livro-vinho);
+    background-color: var(--livro-creme);
+
+    border: 1px solid rgba(107, 41, 39, 0.2);
+    border-radius: 5px;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   AUTOR
+========================================== */
+
+.detalhe-livro-autor {
+    margin: 12px 0 25px;
+
+    color: #77706C;
+    font-size: 1rem;
+}
+
+
+/* ==========================================
+   DESCRIÇÃO
+========================================== */
+
+.detalhe-livro-descricao {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.detalhe-livro-descricao h2 {
+    margin: 0 0 10px;
+
+    color: var(--livro-escuro);
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.detalhe-livro-descricao p {
+    margin: 0;
+
+    color: #514A46;
+    font-size: 0.97rem;
+    line-height: 1.8;
+
+    white-space: pre-line;
+}
+
+
+/* ==========================================
+   INFORMAÇÕES ADICIONAIS
+========================================== */
+
+.detalhe-livro-extra {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 100%;
+    margin-bottom: 25px;
+    padding: 18px 20px;
+
+    background-color: var(--livro-creme);
+
+    border-left: 4px solid var(--livro-laranja);
+    border-radius: 5px;
+}
+
+.detalhe-livro-extra p {
+    margin: 0;
+
+    color: #514A46;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.detalhe-livro-extra strong {
+    color: var(--livro-vinho);
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   ÁREA DE COMPRA
+========================================== */
+
+.detalhe-livro-compra {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+    margin-top: auto;
+    padding-top: 23px;
+
+    border-top: 1px solid rgba(107, 41, 39, 0.15);
+}
+
+
+/* ===== PREÇO ===== */
+
+.detalhe-livro-preco {
+    margin-bottom: 18px;
+
+    color: var(--livro-vinho);
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+
+/* ===== BOTÃO ===== */
+
+.detalhe-livro-compra .botao-comprar {
+    width: 100%;
+    max-width: 340px;
+    min-height: 52px;
+
+    padding: 13px 22px;
+
+    color: var(--livro-branco);
+    background-color: var(--livro-vinho);
+
+    border: 2px solid var(--livro-vinho);
+    border-radius: 8px;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.detalhe-livro-compra .botao-comprar:hover:not(:disabled) {
+    background-color: var(--livro-laranja);
+    border-color: var(--livro-laranja);
+    transform: translateY(-2px);
+}
+
+.detalhe-livro-compra .botao-comprar:disabled {
+    background-color: #B9B2AD;
+    border-color: #B9B2AD;
+    color: #FFFFFF;
+
+    cursor: not-allowed;
+}
+
+
+/* ===== MENSAGEM DO CARRINHO ===== */
+
+.mensagem-carrinho-detalhe {
+    margin: 14px 0 0;
+
+    color: #39734B;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.mensagem-carrinho-detalhe a {
+    color: var(--livro-vinho);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+
+/* ==========================================
+   LIVRO NÃO ENCONTRADO
+========================================== */
+
+.livro-nao-encontrado {
+    padding: 65px 25px;
+
+    background-color: var(--livro-branco);
+    background-image: var(--livro-textura);
+    background-size: 650px;
+
+    border: 1px solid rgba(107, 41, 39, 0.10);
+    border-radius: var(--livro-raio);
+
+    box-shadow: var(--livro-sombra);
+
+    text-align: center;
+}
+
+.livro-nao-encontrado h1 {
+    margin: 0 0 12px;
+
+    color: var(--livro-vinho);
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 2rem;
+}
+
+.livro-nao-encontrado p {
+    margin-bottom: 25px;
+    color: #6F6762;
+}
+
+.livro-nao-encontrado .botao-principal {
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    color: var(--livro-branco);
+    background-color: var(--livro-vinho);
+
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: background-color 0.2s ease;
+}
+
+.livro-nao-encontrado .botao-principal:hover {
+    background-color: var(--livro-laranja);
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 850px) {
+
+    .detalhe-livro-container {
+        grid-template-columns: minmax(230px, 0.8fr) minmax(0, 1.2fr);
+        gap: 30px;
+        padding: 30px;
+    }
+
+    .detalhe-livro-imagem {
+        min-height: 360px;
+        padding: 18px;
+    }
+
+    .detalhe-livro-imagem img {
+        max-height: 320px;
+    }
+
+    .detalhe-livro-titulo h1 {
+        font-size: 2.2rem;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .pagina-detalhe-livro {
+        width: 92%;
+        padding: 28px 0 55px;
+    }
+
+    .voltar-vitrine {
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+    }
+
+    .detalhe-livro-container {
+        grid-template-columns: 1fr;
+        gap: 28px;
+
+        padding: 20px;
+
+        border-radius: 14px;
+    }
+
+    .detalhe-livro-imagem {
+        width: 100%;
+        min-height: 300px;
+        padding: 25px;
+    }
+
+    .detalhe-livro-imagem img {
+        max-height: 290px;
+    }
+
+    .detalhe-livro-titulo {
+        gap: 9px;
+    }
+
+    .detalhe-livro-titulo h1 {
+        font-size: 2rem;
+    }
+
+    .selo-oficial-titulo {
+        font-size: 0.74rem;
+    }
+
+    .selo-oficial-titulo img {
+        width: 17px;
+        height: 17px;
+    }
+
+    .identificacao-anuncio-usuario {
+        font-size: 0.74rem;
+    }
+
+    .detalhe-livro-autor {
+        margin: 9px 0 20px;
+    }
+
+    .detalhe-livro-descricao p {
+        font-size: 0.93rem;
+    }
+
+    .detalhe-livro-extra {
+        padding: 15px;
+    }
+
+    .detalhe-livro-preco {
+        font-size: 1.8rem;
+    }
+
+    .detalhe-livro-compra .botao-comprar {
+        max-width: none;
+    }
+}
+
+
+@media (max-width: 380px) {
+
+    .detalhe-livro-container {
+        padding: 15px;
+    }
+
+    .detalhe-livro-imagem {
+        min-height: 250px;
+    }
+
+    .detalhe-livro-imagem img {
+        max-height: 240px;
+    }
+
+    .detalhe-livro-titulo h1 {
+        font-size: 1.75rem;
+    }
+}
+
+
+/* ==========================================
+   ACESSIBILIDADE
+========================================== */
+
+.voltar-vitrine:focus-visible,
+.detalhe-livro-compra .botao-comprar:focus-visible,
+.livro-nao-encontrado a:focus-visible {
+    outline: 3px solid var(--livro-laranja);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .voltar-vitrine,
+    .detalhe-livro-compra .botao-comprar,
+    .livro-nao-encontrado .botao-principal {
+        transition: none;
+    }
+}
+
+/* CARIMBO DECORATIVO DA SEÇÃO DE DETALHES */
+
+.detalhe-livro-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.detalhe-livro-container::before {
+    content: "";
+    position: absolute;
+
+    top: 18px;
+    right: 22px;
+
+    width: 82px;
+    height: 82px;
+
+    background-image: url("../assets/Carimbo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    transform: rotate(9deg);
+    opacity: 0.75;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Mantém o conteúdo acima do carimbo */
+.detalhe-livro-container > * {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 600px) {
+    .detalhe-livro-container::before {
+        width: 58px;
+        height: 58px;
+        top: 12px;
+        right: 12px;
+        opacity: 0.6;
+    }
+}

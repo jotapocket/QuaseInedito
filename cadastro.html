@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Crie sua conta no Quase Inédito e faça parte da nossa comunidade de leitores.">
+
+    <title>Quase Inédito | Criar conta</title>
+
+    <link rel="icon" type="image/png" href="assets/QuaseInéditoIcon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <a class="marca" href="index.html">
+            <img src="assets/logo.png" alt="Quase Inédito">
+        </a>
+
+        <nav class="navegacao">
+            <a href="index.html">Início</a>
+            <a href="index.html#catalogo">Comprar</a>
+            <a href="trocas.html">Trocas</a>
+            <a href="doacoes.html">Doações</a>
+            <a href="biblioteca.html">Biblioteca digital</a>
+            <a href="clube.html">Clube do livro</a>
+        </nav>
+
+        <form action="pesquisa.html" method="GET" class="barra-pesquisa">
+            <input type="search" name="q" placeholder="Pesquisar livros ou autores..."
+                aria-label="Pesquisar livros ou autores">
+            <button type="submit" aria-label="Pesquisar">&#128269;</button>
+        </form>
+
+        <div class="acoes-usuario">
+            <a href="carrinho.html" class="link-login">
+                Carrinho <span id="contador-carrinho">0</span>
+            </a>
+
+            <a href="login.html" class="link-login">Entrar</a>
+        </div>
+
+    </header>
+
+    <main class="pagina-autenticacao">
+
+        <section class="cartao-autenticacao">
+
+            <div class="autenticacao-apresentacao">
+
+                <span class="subtitulo">BEM-VINDO AO QUASE INÉDITO</span>
+
+                <h1>Uma nova história começa aqui.</h1>
+
+                <p>
+                    Crie sua conta e descubra novas leituras,
+                    compartilhe histórias e dê uma nova vida aos livros.
+                </p>
+
+            </div>
+
+            <div class="autenticacao-formulario">
+
+                <div class="titulo-formulario">
+                    <h2>Criar minha conta</h2>
+                    <p>Preencha seus dados para começar.</p>
+                </div>
+
+                <form id="formulario-cadastro">
+
+                    <div class="campo-autenticacao">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" autocomplete="name"
+                            required>
+                    </div>
+
+                    <div class="campo-autenticacao">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com"
+                            autocomplete="email" required>
+                    </div>
+
+                    <div class="campo-autenticacao">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" placeholder="Crie uma senha"
+                            autocomplete="new-password" required>
+                    </div>
+
+                    <div class="campo-autenticacao">
+                        <label for="confirmar-senha">Confirmar senha</label>
+                        <input type="password" id="confirmar-senha" name="confirmar-senha"
+                            placeholder="Digite sua senha novamente" autocomplete="new-password" required>
+                    </div>
+
+                    <p id="mensagem-cadastro" class="mensagem-autenticacao"></p>
+
+                    <button type="submit" class="botao-autenticacao">
+                        Criar conta
+                    </button>
+
+                </form>
+
+                <p class="alternativa-autenticacao">
+                    Já possui uma conta?
+                    <a href="login.html">Entre aqui</a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>Quase Inédito — Todo livro merece uma nova história.</p>
+    </footer>
+
+    <script src="js/navbar.js" defer></script>
+    <script src="js/usuarios.js" defer></script>
+
+</body>
+
+</html>

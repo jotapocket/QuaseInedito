@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confira os livros selecionados no Quase Inédito.">
+    <title>Quase Inédito | Meu Carrinho</title>
+
+    <link rel="icon" type="image/png" href="assets/QuaseInéditoIcon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carrinho.css">
+    <script src="js/produtos.js" defer></script>
+    <script src="js/armazenamento.js" defer></script>
+    <script src="js/carrinho.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <a href="index.html" class="marca" aria-label="Quase Inédito - Página inicial">
+            <img src="assets/logo.png" alt="Logo Quase Inédito">
+        </a>
+
+        <nav class="navegacao">
+            <a href="index.html">Início</a>
+            <a href="index.html#catalogo">Comprar</a>
+            <a href="trocas.html">Trocas</a>
+            <a href="doacoes.html">Doações</a>
+            <a href="biblioteca.html">Biblioteca digital</a>
+            <a href="clube.html">Clube do livro</a>
+        </nav>
+
+        <form action="pesquisa.html" method="GET" class="barra-pesquisa">
+            <input type="search" name="q" placeholder="Pesquisar livros ou autores..."
+                aria-label="Pesquisar livros ou autores">
+            <button type="submit" aria-label="Pesquisar">&#128269;</button>
+        </form>
+
+        <div class="acoes-usuario">
+            <a href="carrinho.html" class="link-login">
+                Carrinho <span id="contador-carrinho">0</span>
+            </a>
+            <a href="login.html" class="link-login">Entrar</a>
+            <a href="cadastro.html" class="botao-cadastro">Criar conta</a>
+        </div>
+    </header>
+
+    <main class="pagina-carrinho">
+
+        <div class="secao-titulo">
+            <span class="subtitulo">SUAS ESCOLHAS</span>
+            <h1>Meu carrinho</h1>
+            <p>Confira os livros que você escolheu.</p>
+        </div>
+
+        <div class="carrinho-layout">
+
+            <section class="carrinho-principal">
+                <div id="lista-carrinho">
+                    <p>Carregando carrinho...</p>
+                </div>
+
+                <a href="index.html#catalogo" class="botao-voltar-catalogo">
+                    ← Continuar comprando
+                </a>
+            </section>
+
+            <aside class="resumo-compra">
+                <h2>Resumo da compra</h2>
+
+                <div class="resumo-linha">
+                    <span>Produtos</span>
+                    <span id="resumo-quantidade">0</span>
+                </div>
+
+                <div class="resumo-linha resumo-total">
+                    <strong>Total</strong>
+                    <strong id="resumo-total">R$ 0,00</strong>
+                </div>
+
+                <button type="button" id="finalizar-compra" class="botao-finalizar">
+                    Finalizar compra
+                </button>
+
+                <p class="aviso-compra">
+                    Demonstração educacional. Nenhum pagamento real será realizado.
+                </p>
+            </aside>
+
+        </div>
+
+        <div id="mensagem-finalizacao" class="mensagem-finalizacao" hidden>
+            <h2>Pedido demonstrativo concluído!</h2>
+            <p>Obrigado por apoiar a circulação de livros e novas histórias.</p>
+            <a href="index.html#catalogo" class="botao-principal">
+                Voltar ao catálogo
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="rodape">
+        <div>
+            <h2>Quase Inédito</h2>
+            <p>Livros que merecem novas histórias.</p>
+        </div>
+
+        <p>&copy; 2026 Quase Inédito. Projeto educacional.</p>
+    </footer>
+
+</body>
+
+</html>

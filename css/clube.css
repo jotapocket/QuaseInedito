@@ -1,0 +1,1032 @@
+/* =========================================
+   CLUBE DO LIVRO — QUASE INÉDITO
+========================================= */
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+.pagina-clube {
+    --clube-creme: #F8F2E9;
+    --clube-laranja: #F18B4B;
+    --clube-vinho: #6B2927;
+    --clube-escuro: #171313;
+    --clube-branco: #FFFFFF;
+    --clube-texto: #514943;
+    --clube-borda: rgba(107, 41, 39, 0.14);
+
+    width: 94%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-bottom: 75px;
+}
+
+/* =========================================
+   APRESENTAÇÃO
+========================================= */
+
+.apresentacao-clube {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+
+    min-height: 340px;
+    margin: 45px 0 55px;
+    padding: 60px 70px;
+
+    border-radius: 24px;
+
+    background-color: var(--clube-creme);
+    background-image: url("../assets/Texture.WebP");
+    background-position: center;
+    background-size: cover;
+}
+
+.apresentacao-clube-texto {
+    flex: 1;
+    min-width: 0;
+}
+
+.apresentacao-clube-texto > span {
+    display: inline-block;
+    margin-bottom: 14px;
+
+    color: var(--clube-vinho);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.apresentacao-clube-texto h1 {
+    margin: 0 0 17px;
+
+    color: var(--clube-escuro);
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(2.5rem, 4vw, 3.6rem);
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.apresentacao-clube-texto p {
+    max-width: 570px;
+    margin: 0;
+
+    color: var(--clube-texto);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.apresentacao-clube-simbolo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 210px;
+    height: 210px;
+
+    border-radius: 50%;
+    background: rgba(241, 139, 75, 0.12);
+}
+
+.apresentacao-clube-simbolo img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+/* =========================================
+   GRADE PRINCIPAL
+========================================= */
+
+.grade-clube {
+    display: grid;
+    grid-template-columns:
+        minmax(245px, 0.85fr)
+        minmax(0, 1.7fr)
+        minmax(225px, 0.8fr);
+
+    align-items: start;
+    gap: 22px;
+}
+
+.coluna-estante,
+.coluna-forum,
+.coluna-amigos {
+    min-width: 0;
+}
+
+.secao-estante,
+.secao-forum,
+.secao-amigos {
+    padding: 24px;
+
+    border: 1px solid var(--clube-borda);
+    border-radius: 17px;
+
+    background: #FFFDF9;
+    box-shadow: 0 5px 20px rgba(23, 19, 19, 0.045);
+}
+
+/* =========================================
+   CABEÇALHOS DAS SEÇÕES
+========================================= */
+
+.cabecalho-secao-clube {
+    margin-bottom: 22px;
+}
+
+.subtitulo-clube {
+    display: inline-block;
+    margin-bottom: 9px;
+
+    color: var(--clube-vinho);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+.cabecalho-secao-clube h2,
+.secao-amigos h2 {
+    margin: 0 0 9px;
+
+    color: var(--clube-escuro);
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.65rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.cabecalho-secao-clube p,
+.secao-amigos > p {
+    margin: 0;
+
+    color: #74665F;
+    font-size: 0.88rem;
+    line-height: 1.65;
+}
+
+/* =========================================
+   MINHA ESTANTE
+========================================= */
+
+#botao-adicionar-livro {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: var(--clube-vinho);
+    color: white;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#botao-adicionar-livro:hover {
+    background: #4D1D1C;
+}
+
+.resumo-estante {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+.item-resumo-estante {
+    padding: 13px 5px;
+
+    border-radius: 10px;
+    background: #F7F0E7;
+
+    text-align: center;
+}
+
+.item-resumo-estante span {
+    display: block;
+
+    color: var(--clube-vinho);
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.item-resumo-estante p {
+    margin: 3px 0 0;
+
+    color: #74665F;
+    font-size: 0.72rem;
+}
+
+.filtros-estante {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    padding-bottom: 17px;
+    border-bottom: 1px solid var(--clube-borda);
+}
+
+.filtro-estante {
+    padding: 7px 11px;
+
+    border: 1px solid var(--clube-borda);
+    border-radius: 20px;
+
+    background: transparent;
+    color: var(--clube-vinho);
+
+    font-family: inherit;
+    font-size: 0.76rem;
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.filtro-estante:hover,
+.filtro-estante.ativo {
+    border-color: var(--clube-vinho);
+    background: var(--clube-vinho);
+    color: white;
+}
+
+.lista-estante {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+
+    padding-top: 17px;
+}
+
+.mensagem-vazia {
+    padding: 22px 12px;
+    margin: 0;
+
+    border-radius: 10px;
+    background: #F8F2E9;
+
+    color: #796B64;
+    font-size: 0.86rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Livros adicionados à estante */
+
+.card-livro-estante {
+    display: grid;
+    grid-template-columns: 65px minmax(0, 1fr);
+    gap: 5px 12px;
+
+    padding: 12px;
+
+    border: 1px solid var(--clube-borda);
+    border-radius: 11px;
+
+    background: #FFFFFF;
+}
+
+.card-livro-estante img {
+    grid-row: span 4;
+
+    width: 65px;
+    height: 95px;
+
+    border-radius: 5px;
+    object-fit: cover;
+    background: #F1E9DE;
+}
+
+.card-livro-estante h3 {
+    margin: 2px 0 0;
+
+    color: var(--clube-escuro);
+    font-family: "Fredoka", sans-serif;
+    font-size: 0.98rem;
+    line-height: 1.3;
+}
+
+.card-livro-estante > p {
+    margin: 0;
+
+    color: #796A63;
+    font-size: 0.76rem;
+}
+
+.status-livro-estante {
+    width: 100%;
+    min-width: 0;
+    padding: 7px;
+
+    border: 1px solid var(--clube-borda);
+    border-radius: 6px;
+
+    background: #FFFDF9;
+    color: var(--clube-vinho);
+    font-family: inherit;
+    font-size: 0.76rem;
+}
+
+.card-livro-estante > button {
+    padding: 6px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: rgba(107, 41, 39, 0.08);
+    color: var(--clube-vinho);
+
+    font-family: inherit;
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+.card-livro-estante > button:hover {
+    background: rgba(107, 41, 39, 0.16);
+}
+
+/* =========================================
+   FÓRUM DE LEITORES
+========================================= */
+
+.secao-forum {
+    padding: 27px;
+}
+
+#area-publicar {
+    padding: 18px;
+    margin-bottom: 22px;
+
+    border: 1px solid var(--clube-borda);
+    border-radius: 12px;
+
+    background: #FAF6F0;
+}
+
+#form-publicacao {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+#form-publicacao label {
+    color: var(--clube-escuro);
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+#texto-publicacao {
+    width: 100%;
+    min-height: 115px;
+    padding: 13px;
+
+    resize: vertical;
+
+    border: 1px solid rgba(107, 41, 39, 0.2);
+    border-radius: 9px;
+
+    background: white;
+    color: var(--clube-escuro);
+
+    font: inherit;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+#texto-publicacao:focus,
+.form-comentario input:focus {
+    outline: 2px solid rgba(241, 139, 75, 0.45);
+    border-color: var(--clube-laranja);
+}
+
+#form-publicacao button {
+    align-self: flex-end;
+    min-width: 115px;
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: var(--clube-vinho);
+    color: white;
+
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#form-publicacao button:hover {
+    background: #4D1D1C;
+}
+
+/* =========================================
+   PUBLICAÇÕES
+========================================= */
+
+#lista-publicacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.publicacao-oficial,
+.publicacao-usuario {
+    padding: 20px;
+
+    border: 1px solid var(--clube-borda);
+    border-radius: 13px;
+
+    background: #FFFFFF;
+}
+
+.publicacao-oficial {
+    border-left: 4px solid var(--clube-laranja);
+    background: #FFFCF6;
+}
+
+.cabecalho-publicacao {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 15px;
+}
+
+.avatar-oficial,
+.avatar-publicacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 43px;
+    height: 43px;
+
+    border-radius: 50%;
+
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+}
+
+.avatar-oficial {
+    background: var(--clube-vinho);
+    color: white;
+}
+
+.avatar-publicacao {
+    background: rgba(241, 139, 75, 0.2);
+    color: var(--clube-vinho);
+}
+
+.cabecalho-publicacao h3 {
+    margin: 0 0 3px;
+
+    color: var(--clube-escuro);
+    font-family: "Fredoka", sans-serif;
+    font-size: 1rem;
+}
+
+.cabecalho-publicacao span {
+    color: #877970;
+    font-size: 0.73rem;
+}
+
+.publicacao-oficial > p,
+.publicacao-usuario > p {
+    margin: 0;
+
+    color: var(--clube-texto);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    white-space: pre-line;
+}
+
+/* =========================================
+   COMENTÁRIOS
+========================================= */
+
+.comentarios-publicacao {
+    margin-top: 20px;
+    padding-top: 15px;
+
+    border-top: 1px solid var(--clube-borda);
+}
+
+.lista-comentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+
+    margin-bottom: 15px;
+}
+
+.comentario {
+    padding: 10px 12px;
+
+    border-radius: 8px;
+    background: #F8F2E9;
+}
+
+.comentario p {
+    margin: 0;
+
+    color: var(--clube-texto);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.comentario strong {
+    color: var(--clube-vinho);
+}
+
+.form-comentario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-comentario label {
+    color: #71635D;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.campo-comentario {
+    display: flex;
+    gap: 8px;
+}
+
+.form-comentario input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 12px;
+
+    border: 1px solid var(--clube-borda);
+    border-radius: 8px;
+
+    background: white;
+    color: var(--clube-escuro);
+    font: inherit;
+    font-size: 0.82rem;
+}
+
+.form-comentario button {
+    padding: 9px 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: var(--clube-vinho);
+    color: white;
+
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form-comentario button:hover {
+    background: #4D1D1C;
+}
+
+/* =========================================
+   COMUNIDADE / LEITORES
+========================================= */
+
+.secao-amigos {
+    background: #FBF7F1;
+}
+
+.area-pesquisa-amigos {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    margin: 20px 0;
+}
+
+.area-pesquisa-amigos input {
+    width: 100%;
+    padding: 11px;
+
+    border: 1px solid var(--clube-borda);
+    border-radius: 8px;
+
+    background: #FFFFFF;
+    font: inherit;
+    font-size: 0.82rem;
+}
+
+.area-pesquisa-amigos button {
+    padding: 9px;
+
+    border: 1px solid var(--clube-borda);
+    border-radius: 8px;
+
+    background: #F0E8DE;
+    color: #877970;
+
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.aviso-indisponivel {
+    padding: 17px;
+
+    border: 1px dashed rgba(107, 41, 39, 0.25);
+    border-radius: 10px;
+
+    background: rgba(241, 139, 75, 0.08);
+}
+
+.aviso-indisponivel span {
+    display: inline-block;
+    margin-bottom: 8px;
+
+    color: var(--clube-vinho);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.aviso-indisponivel p {
+    margin: 0;
+
+    color: #71635D;
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+/* =========================================
+   CLUBE PRESENCIAL
+========================================= */
+
+.secao-clube-presencial {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    margin-top: 55px;
+    padding: 42px 50px;
+
+    border-radius: 18px;
+
+    background: var(--clube-vinho);
+    color: white;
+}
+
+.conteudo-clube-presencial {
+    max-width: 720px;
+}
+
+.conteudo-clube-presencial > span {
+    display: inline-block;
+    margin-bottom: 10px;
+
+    color: #F6B17F;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.conteudo-clube-presencial h2 {
+    margin: 0 0 15px;
+
+    color: white;
+    font-family: "Fredoka", sans-serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.conteudo-clube-presencial p {
+    margin: 0 0 12px;
+
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.92rem;
+    line-height: 1.75;
+}
+
+.qr-code-clube {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+#imagem-qr-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 165px;
+    height: 165px;
+    padding: 12px;
+
+    border-radius: 12px;
+    background: white;
+}
+
+#imagem-qr-code img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.qr-code-clube > span {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.78rem;
+    text-align: center;
+}
+
+/* =========================================
+   MODAIS DO CLUBE
+   Mantém os elementos dinâmicos do JS
+========================================= */
+
+.modal-clube {
+    width: min(92%, 520px);
+    max-width: 520px;
+    max-height: 85vh;
+    padding: 0;
+
+    border: 1px solid rgba(107, 41, 39, 0.2);
+    border-radius: 17px;
+
+    background: var(--clube-creme);
+    color: var(--clube-escuro);
+
+    overflow: auto;
+}
+
+.modal-clube::backdrop {
+    background: rgba(23, 19, 19, 0.72);
+    backdrop-filter: blur(3px);
+}
+
+.conteudo-modal-clube {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 30px;
+}
+
+.conteudo-modal-clube h2 {
+    margin: 0;
+
+    color: var(--clube-vinho);
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.65rem;
+}
+
+.conteudo-modal-clube > p {
+    margin: 0 0 8px;
+    color: #71635D;
+    font-size: 0.88rem;
+}
+
+.fechar-modal-clube {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(107, 41, 39, 0.08);
+    color: var(--clube-vinho);
+
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.conteudo-modal-clube label {
+    color: var(--clube-escuro);
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+.conteudo-modal-clube input,
+.conteudo-modal-clube select {
+    width: 100%;
+    padding: 12px;
+
+    border: 1px solid var(--clube-borda);
+    border-radius: 8px;
+
+    background: white;
+    color: var(--clube-escuro);
+    font: inherit;
+}
+
+#resultados-livros-clube {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    max-height: 190px;
+    overflow-y: auto;
+}
+
+.resultado-livro-clube {
+    padding: 10px;
+
+    border: 1px solid var(--clube-borda);
+    border-radius: 7px;
+
+    background: white;
+    color: var(--clube-texto);
+
+    text-align: left;
+    font: inherit;
+    font-size: 0.83rem;
+    cursor: pointer;
+}
+
+.resultado-livro-clube:hover,
+.resultado-livro-clube.selecionado {
+    border-color: var(--clube-laranja);
+    background: rgba(241, 139, 75, 0.12);
+}
+
+#confirmar-livro-clube {
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: var(--clube-vinho);
+    color: white;
+
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#confirmar-livro-clube:disabled {
+    background: #B8AAA2;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 1100px) {
+    .grade-clube {
+        grid-template-columns: minmax(230px, 0.85fr) minmax(0, 1.5fr);
+    }
+
+    .coluna-amigos {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 950px) {
+    .apresentacao-clube {
+        padding: 50px 45px;
+    }
+
+    .apresentacao-clube-simbolo {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 700px) {
+    .pagina-clube {
+        width: 92%;
+    }
+
+    .apresentacao-clube {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+
+        padding: 40px 28px;
+        margin: 30px 0 40px;
+
+        border-radius: 17px;
+    }
+
+    .apresentacao-clube-texto h1 {
+        font-size: 2.5rem;
+    }
+
+    .apresentacao-clube-simbolo {
+        width: 135px;
+        height: 135px;
+        align-self: center;
+    }
+
+    .grade-clube {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .coluna-amigos {
+        grid-column: auto;
+    }
+
+    .secao-estante,
+    .secao-forum,
+    .secao-amigos {
+        padding: 20px;
+    }
+
+    .secao-clube-presencial {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 25px;
+    }
+
+    .qr-code-clube {
+        align-self: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .apresentacao-clube {
+        padding: 35px 22px;
+    }
+
+    .apresentacao-clube-texto h1 {
+        font-size: 2.1rem;
+    }
+
+    .secao-forum {
+        padding: 15px;
+    }
+
+    .publicacao-oficial,
+    .publicacao-usuario {
+        padding: 15px;
+    }
+
+    .campo-comentario {
+        flex-direction: column;
+    }
+
+    .form-comentario button {
+        align-self: flex-end;
+    }
+
+    .conteudo-modal-clube {
+        padding: 25px 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* CORES GLOBAIS DOS MODAIS */
+
+:root {
+    --clube-creme: #F8F2E9;
+    --clube-laranja: #F18B4B;
+    --clube-vinho: #6B2927;
+    --clube-escuro: #171313;
+}

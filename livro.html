@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confira os detalhes deste livro no Quase Inédito.">
+    <title>Livro | Quase Inédito</title>
+
+    <link rel="icon" type="image/png" href="assets/QuaseInéditoIcon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/livro.css">
+
+    <script src="js/produtos.js" defer></script>
+    <script src="js/armazenamento.js" defer></script>
+    <script src="js/livro.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <a href="index.html" class="marca" aria-label="Quase Inédito - Página inicial">
+            <img src="assets/logo.png" alt="Logo Quase Inédito">
+        </a>
+
+        <nav class="navegacao">
+            <a href="index.html">Início</a>
+            <a href="index.html#catalogo">Comprar</a>
+            <a href="trocas.html">Trocas</a>
+            <a href="doacoes.html">Doações</a>
+            <a href="biblioteca.html">Biblioteca digital</a>
+            <a href="clube.html">Clube do livro</a>
+        </nav>
+
+        <form action="pesquisa.html" method="GET" class="barra-pesquisa">
+            <input type="search" name="q" placeholder="Pesquisar livros ou autores..."
+                aria-label="Pesquisar livros ou autores">
+            <button type="submit" aria-label="Pesquisar">&#128269;</button>
+        </form>
+
+        <div class="acoes-usuario">
+            <a href="carrinho.html" class="link-login">
+                Carrinho <span id="contador-carrinho">0</span>
+            </a>
+            <a href="login.html" class="link-login">Entrar</a>
+            <a href="cadastro.html" class="botao-cadastro">Criar conta</a>
+        </div>
+    </header>
+
+    <main class="pagina-detalhe-livro">
+        <a href="index.html#catalogo" class="voltar-vitrine">
+            ← Voltar à vitrine
+        </a>
+
+        <section id="detalhes-livro">
+            <p>Carregando informações do livro...</p>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2026 Quase Inédito. Todos os direitos reservados.</p>
+        <p>Novas histórias merecem novas oportunidades.</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,496 @@
+/* =========================================
+   BIBLIOTECA DIGITAL — QUASE INÉDITO
+========================================= */
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+.pagina-biblioteca {
+    width: 90%;
+    max-width: 1350px;
+    margin: 0 auto;
+    padding-bottom: 75px;
+
+    --biblioteca-creme: #F8F2E9;
+    --biblioteca-laranja: #F18B4B;
+    --biblioteca-vinho: #6B2927;
+    --biblioteca-escuro: #171313;
+    --biblioteca-branco: #FFFFFF;
+}
+
+/* =========================================
+   APRESENTAÇÃO
+========================================= */
+
+.apresentacao-biblioteca {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+
+    min-height: 340px;
+    padding: 60px 70px;
+    margin: 45px 0 75px;
+
+    border-radius: 24px;
+
+    background-color: var(--biblioteca-creme);
+    background-image: url("../assets/Texture.WebP");
+    background-size: cover;
+    background-position: center;
+}
+
+.apresentacao-biblioteca-texto {
+    flex: 1;
+    min-width: 0;
+}
+
+.apresentacao-biblioteca-texto .subtitulo {
+    display: inline-block;
+    margin-bottom: 14px;
+
+    color: var(--biblioteca-vinho);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.apresentacao-biblioteca-texto h1 {
+    max-width: 650px;
+    margin: 0 0 18px;
+
+    color: var(--biblioteca-escuro);
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.12;
+}
+
+.apresentacao-biblioteca-texto p {
+    max-width: 590px;
+    margin: 0;
+
+    color: #514643;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.apresentacao-biblioteca-simbolo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 210px;
+    height: 210px;
+
+    border-radius: 50%;
+    background: rgba(241, 139, 75, 0.12);
+}
+
+.apresentacao-biblioteca-simbolo img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+/* =========================================
+   CABEÇALHO DO ACERVO
+========================================= */
+
+.biblioteca-conteudo {
+    padding: 15px 0 35px;
+}
+
+.cabecalho-biblioteca {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+
+    margin-bottom: 35px;
+}
+
+.identificador-biblioteca {
+    display: inline-block;
+    margin-bottom: 9px;
+
+    color: var(--biblioteca-vinho);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.cabecalho-biblioteca h2,
+.leitor-cabecalho h2 {
+    margin: 0 0 9px;
+
+    color: var(--biblioteca-escuro);
+    font-family: "Fredoka", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.cabecalho-biblioteca p {
+    margin: 0;
+    color: #71635D;
+    line-height: 1.6;
+}
+
+.etiqueta-biblioteca {
+    flex-shrink: 0;
+    padding: 10px 17px;
+
+    border: 1px solid rgba(107, 41, 39, 0.2);
+    border-radius: 30px;
+
+    background: rgba(241, 139, 75, 0.12);
+    color: var(--biblioteca-vinho);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   GRADE DE LIVROS
+========================================= */
+
+#biblioteca-lista.livros-lista {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+    align-items: stretch;
+}
+
+#biblioteca-lista > .livro-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    min-width: 0;
+    padding: 18px;
+
+    border: 1px solid rgba(107, 41, 39, 0.12);
+    border-radius: 17px;
+
+    background: #FFFDF9;
+    box-shadow: 0 5px 18px rgba(23, 19, 19, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+#biblioteca-lista > .livro-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(241, 139, 75, 0.65);
+    box-shadow: 0 12px 26px rgba(23, 19, 19, 0.09);
+}
+
+#biblioteca-lista > .livro-card img {
+    display: block;
+    width: 100%;
+    height: 245px;
+
+    margin-bottom: 18px;
+    border-radius: 9px;
+
+    object-fit: contain;
+    background: #F1E9DE;
+}
+
+#biblioteca-lista > .livro-card h3 {
+    margin: 0 0 6px;
+
+    color: var(--biblioteca-escuro);
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+#biblioteca-lista > .livro-card > p:nth-of-type(1) {
+    margin: 0 0 13px;
+
+    color: #796A63;
+    font-size: 0.88rem;
+}
+
+#biblioteca-lista .categoria-livro-digital {
+    display: inline-block;
+    align-self: flex-start;
+
+    margin-bottom: 13px;
+    padding: 6px 10px;
+
+    border-radius: 20px;
+    background: rgba(241, 139, 75, 0.14);
+
+    color: var(--biblioteca-vinho);
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+#biblioteca-lista > .livro-card > p:nth-of-type(2) {
+    flex: 1;
+    margin: 0 0 18px;
+
+    color: #514943;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+/* =========================================
+   BOTÕES DOS LIVROS
+========================================= */
+
+#biblioteca-lista .botao-principal {
+    width: 100%;
+    min-height: 43px;
+    margin-top: auto;
+    padding: 10px 15px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: var(--biblioteca-vinho);
+    color: white;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#biblioteca-lista .botao-principal:hover {
+    background: #4D1D1C;
+}
+
+#biblioteca-lista .link-download-biblioteca {
+    display: block;
+    width: 100%;
+
+    margin-top: 9px;
+    padding: 10px 15px;
+
+    border: 1px solid rgba(107, 41, 39, 0.25);
+    border-radius: 9px;
+
+    color: var(--biblioteca-vinho);
+    background: transparent;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+#biblioteca-lista .link-download-biblioteca:hover {
+    background: rgba(241, 139, 75, 0.12);
+    border-color: var(--biblioteca-laranja);
+}
+
+/* =========================================
+   LEITOR DE PDF
+========================================= */
+
+#leitor-pdf[hidden] {
+    display: none !important;
+}
+
+#leitor-pdf {
+    margin-top: 45px;
+    padding: 25px;
+
+    border: 1px solid rgba(107, 41, 39, 0.15);
+    border-radius: 18px;
+
+    background: var(--biblioteca-creme);
+    background-image: url("../assets/Texture.WebP");
+    background-size: cover;
+
+    scroll-margin-top: 110px;
+}
+
+.leitor-cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+.leitor-cabecalho h2 {
+    font-size: 1.65rem;
+}
+
+.leitor-cabecalho button {
+    flex-shrink: 0;
+    padding: 11px 18px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: var(--biblioteca-vinho);
+    color: white;
+
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.leitor-cabecalho button:hover {
+    background: #4D1D1C;
+}
+
+#visualizador-pdf {
+    display: block;
+    width: 100%;
+    min-height: 600px;
+
+    border: 1px solid rgba(23, 19, 19, 0.12);
+    border-radius: 10px;
+
+    background: white;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 1100px) {
+    #biblioteca-lista.livros-lista {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 950px) {
+    .apresentacao-biblioteca {
+        padding: 50px 45px;
+    }
+
+    .apresentacao-biblioteca-simbolo {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 750px) {
+    #biblioteca-lista.livros-lista {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    #biblioteca-lista > .livro-card {
+        padding: 14px;
+    }
+
+    #biblioteca-lista > .livro-card img {
+        height: 210px;
+    }
+}
+
+@media (max-width: 650px) {
+    .pagina-biblioteca {
+        width: 92%;
+    }
+
+    .apresentacao-biblioteca {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+
+        padding: 40px 28px;
+        margin: 30px 0 55px;
+
+        border-radius: 17px;
+    }
+
+    .apresentacao-biblioteca-texto h1 {
+        font-size: 2.35rem;
+    }
+
+    .apresentacao-biblioteca-simbolo {
+        width: 135px;
+        height: 135px;
+        align-self: center;
+    }
+
+    .cabecalho-biblioteca {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .leitor-cabecalho {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #leitor-pdf {
+        padding: 17px;
+    }
+
+    #visualizador-pdf {
+        min-height: 450px;
+        height: 450px;
+    }
+}
+
+@media (max-width: 420px) {
+    #biblioteca-lista.livros-lista {
+        grid-template-columns: 1fr;
+    }
+
+    #biblioteca-lista > .livro-card img {
+        height: 260px;
+    }
+
+    .apresentacao-biblioteca {
+        padding: 35px 22px;
+    }
+
+    .apresentacao-biblioteca-texto h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #biblioteca-lista > .livro-card {
+        transition: none;
+    }
+
+    #biblioteca-lista > .livro-card:hover {
+        transform: none;
+    }
+}

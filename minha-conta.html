@@ -1,0 +1,589 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quase Inédito | Minha conta</title>
+
+    <link rel="icon" type="image/png" href="assets/QuaseInéditoIcon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/minha-conta.css">
+
+    <!-- Proteção da página -->
+    <script>
+        const sessaoAtual = localStorage.getItem("usuarioLogado");
+
+        if (!sessaoAtual) {
+            window.location.replace("login.html");
+        }
+    </script>
+
+    <script src="js/armazenamento.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/minha-conta.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ===== CABEÇALHO ===== -->
+
+    <header class="cabecalho">
+
+        <a class="marca" href="index.html">
+            <img src="assets/logo.png" alt="Quase Inédito">
+        </a>
+
+        <nav class="navegacao">
+            <a href="index.html">Início</a>
+            <a href="index.html#catalogo">Comprar</a>
+            <a href="trocas.html">Trocas</a>
+            <a href="doacoes.html">Doações</a>
+            <a href="biblioteca.html">Biblioteca digital</a>
+            <a href="clube.html">Clube do livro</a>
+        </nav>
+
+        <form action="pesquisa.html" method="GET" class="barra-pesquisa">
+            <input
+                type="search"
+                name="q"
+                placeholder="Pesquisar livros ou autores..."
+                aria-label="Pesquisar livros ou autores"
+            >
+
+            <button type="submit" aria-label="Pesquisar">
+                &#128269;
+            </button>
+        </form>
+
+        <div class="acoes-usuario">
+
+            <a href="carrinho.html" class="link-login">
+                Carrinho <span id="contador-carrinho">0</span>
+            </a>
+
+            <a href="login.html" class="link-login">Entrar</a>
+            <a href="cadastro.html" class="botao-cadastro">Cadastrar</a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ===== CONTEÚDO DA CONTA ===== -->
+
+    <main class="pagina-minha-conta">
+
+        <div class="cabecalho-conta">
+
+            <span class="subtitulo">ÁREA DO LEITOR</span>
+
+            <h1>Minha conta</h1>
+
+            <p>
+                Gerencie seu perfil, acompanhe seus livros
+                e veja suas atividades no Quase Inédito.
+            </p>
+
+        </div>
+
+
+        <!-- RESUMO DO PERFIL -->
+
+        <section class="resumo-perfil">
+
+            <div class="avatar-perfil" id="avatar-perfil">JP</div>
+
+            <div class="informacoes-perfil">
+
+                <h2 id="nome-perfil">Carregando...</h2>
+
+                <p id="email-perfil">Carregando e-mail...</p>
+
+                <span>Leitor do Quase Inédito</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- MENU DA CONTA -->
+
+        <section class="secoes-conta">
+
+            <div class="titulo-secoes-conta">
+                <h2>Minha área</h2>
+                <p>Escolha o que deseja acessar.</p>
+            </div>
+
+            <div class="grade-secoes-conta">
+
+                <button
+                    type="button"
+                    class="cartao-conta"
+                    data-abrir-modal="modal-perfil"
+                >
+                    <span class="icone-conta">&#128100;</span>
+                    <h3>Meu perfil</h3>
+                    <p>Consulte e atualize seus dados pessoais.</p>
+                    <span class="link-conta">Acessar &rarr;</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="cartao-conta"
+                    data-abrir-modal="modal-anuncios"
+                >
+                    <span class="icone-conta">&#128218;</span>
+                    <h3>Meus anúncios</h3>
+                    <p>Publique e gerencie seus livros.</p>
+                    <span class="link-conta">Acessar &rarr;</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="cartao-conta"
+                    data-abrir-modal="modal-compras"
+                >
+                    <span class="icone-conta">&#128722;</span>
+                    <h3>Minhas compras</h3>
+                    <p>Acompanhe seu histórico de compras.</p>
+                    <span class="link-conta">Acessar &rarr;</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="cartao-conta"
+                    data-abrir-modal="modal-trocas"
+                >
+                    <span class="icone-conta">&#128260;</span>
+                    <h3>Minhas trocas</h3>
+                    <p>Acompanhe propostas enviadas e recebidas.</p>
+                    <span class="link-conta">Acessar &rarr;</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================== -->
+        <!-- MODAL: MEU PERFIL -->
+        <!-- ====================================== -->
+
+        <dialog id="modal-perfil" class="modal-conta">
+
+            <div class="conteudo-modal">
+
+                <div class="cabecalho-modal">
+
+                    <div>
+                        <h2>Meu perfil</h2>
+                        <p>Informações e configurações da sua conta.</p>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="botao-fechar-modal"
+                        data-fechar-modal
+                        aria-label="Fechar janela"
+                    >
+                        &times;
+                    </button>
+
+                </div>
+
+
+                <!-- DADOS DO PERFIL -->
+
+                <section id="perfil" class="secao-detalhes-conta">
+
+                    <h3>Informações pessoais</h3>
+
+                    <div class="dados-perfil">
+
+                        <p>
+                            <strong>Nome:</strong>
+                            <span id="detalhe-nome"></span>
+                        </p>
+
+                        <p>
+                            <strong>E-mail:</strong>
+                            <span id="detalhe-email"></span>
+                        </p>
+
+                        <p>
+                            <strong>Data de cadastro:</strong>
+                            <span id="data-cadastro"></span>
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- EDITAR DADOS PESSOAIS -->
+
+                <section class="bloco-configuracao">
+
+                    <div class="titulo-configuracao">
+                        <h3>Editar dados pessoais</h3>
+                        <p>Atualize seu nome e endereço de e-mail.</p>
+                    </div>
+
+                    <form id="form-editar-perfil">
+
+                        <div class="campo-formulario">
+
+                            <label for="config-nome">Nome completo</label>
+
+                            <input
+                                type="text"
+                                id="config-nome"
+                                required
+                                minlength="3"
+                                maxlength="80"
+                            >
+
+                        </div>
+
+                        <div class="campo-formulario">
+
+                            <label for="config-email">E-mail</label>
+
+                            <input
+                                type="email"
+                                id="config-email"
+                                required
+                            >
+
+                        </div>
+
+                        <button type="submit">
+                            Salvar alterações
+                        </button>
+
+                        <p id="mensagem-perfil" aria-live="polite"></p>
+
+                    </form>
+
+                </section>
+
+
+                <!-- ALTERAR SENHA -->
+
+                <section class="bloco-configuracao">
+
+                    <div class="titulo-configuracao">
+                        <h3>Segurança</h3>
+                        <p>Altere sua senha de acesso.</p>
+                    </div>
+
+                    <form id="form-alterar-senha">
+
+                        <div class="campo-formulario">
+
+                            <label for="senha-atual">Senha atual</label>
+
+                            <input
+                                type="password"
+                                id="senha-atual"
+                                required
+                                autocomplete="current-password"
+                            >
+
+                        </div>
+
+                        <div class="campo-formulario">
+
+                            <label for="nova-senha">Nova senha</label>
+
+                            <input
+                                type="password"
+                                id="nova-senha"
+                                required
+                                minlength="6"
+                                autocomplete="new-password"
+                            >
+
+                        </div>
+
+                        <div class="campo-formulario">
+
+                            <label for="confirmar-nova-senha">
+                                Confirmar nova senha
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirmar-nova-senha"
+                                required
+                                minlength="6"
+                                autocomplete="new-password"
+                            >
+
+                        </div>
+
+                        <button type="submit">
+                            Alterar senha
+                        </button>
+
+                        <p id="mensagem-senha" aria-live="polite"></p>
+
+                    </form>
+
+                </section>
+
+
+                <!-- ENCERRAR SESSÃO -->
+
+                <section class="bloco-configuracao bloco-sair">
+
+                    <div>
+                        <h3>Encerrar sessão</h3>
+                        <p>Saia da sua conta neste dispositivo.</p>
+                    </div>
+
+                    <button type="button" id="botao-sair">
+                        Sair da conta
+                    </button>
+
+                </section>
+
+            </div>
+
+        </dialog>
+
+
+        <!-- ====================================== -->
+        <!-- MODAL: MEUS ANÚNCIOS -->
+        <!-- ====================================== -->
+
+        <dialog id="modal-anuncios" class="modal-conta">
+
+            <div class="conteudo-modal">
+
+                <div class="cabecalho-modal">
+
+                    <div>
+                        <h2>Meus anúncios</h2>
+                        <p>Publique livros e acompanhe suas publicações.</p>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="botao-fechar-modal"
+                        data-fechar-modal
+                        aria-label="Fechar janela"
+                    >
+                        &times;
+                    </button>
+
+                </div>
+
+
+                <section id="anuncios" class="secao-detalhes-conta">
+
+                    <button type="button" id="botao-novo-anuncio">
+                        + Novo anúncio
+                    </button>
+
+
+                    <!-- FORMULÁRIO DE PUBLICAÇÃO -->
+
+                    <div id="area-formulario-anuncio" hidden>
+
+                        <h3>Novo anúncio</h3>
+
+                        <form id="form-anuncio">
+
+                            <label for="titulo-anuncio">Título do livro</label>
+                            <input type="text" id="titulo-anuncio" required>
+
+                            <label for="autor-anuncio">Autor</label>
+                            <input type="text" id="autor-anuncio" required>
+
+                            <label for="categoria-anuncio">Categoria</label>
+                            <input type="text" id="categoria-anuncio" required>
+
+                            <label for="descricao-anuncio">Descrição</label>
+                            <textarea id="descricao-anuncio" required></textarea>
+
+                            <label for="imagem-anuncio">URL da capa do livro</label>
+                            <input
+                                type="url"
+                                id="imagem-anuncio"
+                                placeholder="https://..."
+                                required
+                            >
+
+                            <label for="modalidade-anuncio">Modalidade</label>
+
+                            <select id="modalidade-anuncio" required>
+                                <option value="">Selecione</option>
+                                <option value="venda">Venda</option>
+                                <option value="troca">Troca</option>
+                                <option value="doacao">Doação</option>
+                            </select>
+
+                            <div id="bloco-preco" hidden>
+
+                                <label for="preco-anuncio">Preço (R$)</label>
+
+                                <input
+                                    type="number"
+                                    id="preco-anuncio"
+                                    min="0.01"
+                                    step="0.01"
+                                >
+
+                            </div>
+
+                            <div id="bloco-procura" hidden>
+
+                                <label for="procura-anuncio">
+                                    Que livro você procura?
+                                </label>
+
+                                <input type="text" id="procura-anuncio">
+
+                            </div>
+
+                            <label for="condicao-anuncio">
+                                Estado de conservação
+                            </label>
+
+                            <select id="condicao-anuncio" required>
+                                <option value="">Selecione</option>
+                                <option value="Novo">Novo</option>
+                                <option value="Usado - Excelente">Usado - Excelente</option>
+                                <option value="Usado - Bom">Usado - Bom</option>
+                                <option value="Usado - Regular">Usado - Regular</option>
+                            </select>
+
+                            <button type="submit">Publicar anúncio</button>
+
+                            <button type="button" id="botao-cancelar-anuncio">
+                                Cancelar
+                            </button>
+
+                            <p id="mensagem-anuncio" aria-live="polite"></p>
+
+                        </form>
+
+                    </div>
+
+
+                    <!-- LISTAS DE ANÚNCIOS -->
+
+                    <div class="lista-meus-anuncios">
+
+                        <h3>Livros à venda</h3>
+                        <div id="lista-anuncios-venda"></div>
+
+                        <h3>Livros para troca</h3>
+                        <div id="lista-anuncios-troca"></div>
+
+                        <h3>Livros para doação</h3>
+                        <div id="lista-anuncios-doacao"></div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </dialog>
+
+
+        <!-- ====================================== -->
+        <!-- MODAL: MINHAS COMPRAS -->
+        <!-- ====================================== -->
+
+        <dialog id="modal-compras" class="modal-conta">
+
+            <div class="conteudo-modal">
+
+                <div class="cabecalho-modal">
+
+                    <div>
+                        <h2>Minhas compras</h2>
+                        <p>Acompanhe os pedidos demonstrativos realizados.</p>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="botao-fechar-modal"
+                        data-fechar-modal
+                        aria-label="Fechar janela"
+                    >
+                        &times;
+                    </button>
+
+                </div>
+
+                <section id="compras" class="secao-detalhes-conta">
+
+                    <div id="lista-compras"></div>
+
+                </section>
+
+            </div>
+
+        </dialog>
+
+
+        <!-- ====================================== -->
+        <!-- MODAL: MINHAS TROCAS -->
+        <!-- ====================================== -->
+
+        <dialog id="modal-trocas" class="modal-conta">
+
+            <div class="conteudo-modal">
+
+                <div class="cabecalho-modal">
+
+                    <div>
+                        <h2>Minhas trocas</h2>
+                        <p>Acompanhe suas propostas de troca.</p>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="botao-fechar-modal"
+                        data-fechar-modal
+                        aria-label="Fechar janela"
+                    >
+                        &times;
+                    </button>
+
+                </div>
+
+                <section id="trocas" class="secao-detalhes-conta">
+
+                    <h3>Propostas enviadas</h3>
+                    <div id="propostas-enviadas"></div>
+
+                    <h3>Propostas recebidas</h3>
+                    <div id="propostas-recebidas"></div>
+
+                </section>
+
+            </div>
+
+        </dialog>
+
+    </main>
+
+
+    <!-- ===== RODAPÉ ===== -->
+
+    <footer class="rodape">
+        <p>Quase Inédito — Todo livro merece uma nova história.</p>
+    </footer>
+
+</body>
+
+</html>

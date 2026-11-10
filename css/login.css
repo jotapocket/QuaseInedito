@@ -1,0 +1,93 @@
+
+/* ==========================================
+   QUASE INÉDITO — PÁGINA DE LOGIN
+========================================== */
+
+/* APRESENTAÇÃO */
+
+.autenticacao-apresentacao h1 {
+    max-width: 400px;
+}
+
+/* CARTÃO */
+
+.cartao-autenticacao {
+    min-height: 560px;
+}
+
+/* FORMULÁRIO */
+
+.autenticacao-formulario {
+    justify-content: center;
+}
+
+.titulo-formulario {
+    margin-bottom: 35px;
+}
+
+/* CAMPOS */
+
+#formulario-login {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* MENSAGEM */
+
+#formulario-login .mensagem-autenticacao {
+    min-height: 20px;
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* BOTÃO */
+
+#formulario-login .botao-autenticacao {
+    margin-top: 3px;
+}
+
+/* ALTERNATIVA */
+
+.alternativa-autenticacao {
+    margin-top: 30px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+
+    .cartao-autenticacao {
+        min-height: 530px;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .cartao-autenticacao {
+        min-height: auto;
+    }
+
+    .autenticacao-apresentacao {
+        min-height: 235px;
+    }
+
+    .autenticacao-formulario {
+        padding: 42px 28px 38px;
+    }
+
+    #formulario-login {
+        gap: 19px;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .autenticacao-formulario {
+        padding: 32px 21px;
+    }
+
+}

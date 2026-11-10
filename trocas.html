@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quase Inédito | Trocas</title>
+    <link rel="icon" type="image/png" href="assets/QuaseInéditoIcon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/trocas.css">
+    <script src="js/produtos.js" defer></script>
+    <script src="js/armazenamento.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/trocas.js" defer></script>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <a class="marca" href="index.html">
+            <img src="assets/logo.png" alt="Quase Inédito">
+        </a>
+
+        <nav class="navegacao">
+            <a href="index.html">Início</a>
+            <a href="index.html#catalogo">Comprar</a>
+            <a href="trocas.html">Trocas</a>
+            <a href="doacoes.html">Doações</a>
+            <a href="biblioteca.html">Biblioteca digital</a>
+            <a href="clube.html">Clube do livro</a>
+        </nav>
+
+        <form action="pesquisa.html" method="GET" class="barra-pesquisa">
+            <input type="search" name="q" placeholder="Pesquisar livros ou autores..."
+                aria-label="Pesquisar livros ou autores">
+            <button type="submit" aria-label="Pesquisar">&#128269;</button>
+        </form>
+
+        <div class="acoes-usuario">
+            <a href="carrinho.html" class="link-login">
+                Carrinho <span id="contador-carrinho">0</span>
+            </a>
+            <a href="login.html" class="link-login">Entrar</a>
+            <a href="cadastro.html" class="botao-cadastro">Cadastrar</a>
+        </div>
+    </header>
+
+
+
+    <main class="pagina-trocas">
+
+        <section class="apresentacao-trocas">
+
+            <div class="apresentacao-trocas-texto">
+                <span class="subtitulo">CIRCULAÇÃO DE LIVROS</span>
+
+                <h1>Troque histórias, descubra novos mundos.</h1>
+
+                <p>
+                    Seu próximo livro pode estar nas mãos de outro leitor.
+                    Encontre um exemplar interessante e faça uma proposta de troca.
+                </p>
+            </div>
+
+            <div class="apresentacao-trocas-simbolo">
+                <img src="assets/QuaseInéditoIcon.png" alt="" aria-hidden="true">
+            </div>
+
+        </section>
+
+        <section class="catalogo-trocas">
+
+            <div class="secao-titulo">
+                <h2>Livros disponíveis para troca</h2>
+                <p>Confira os livros anunciados pela nossa comunidade.</p>
+            </div>
+
+            <div class="informacoes-trocas">
+                <span id="quantidade-trocas">Carregando anúncios...</span>
+            </div>
+
+            <div class="grade-trocas" id="livros-troca">
+                <p>Carregando livros disponíveis...</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Janela de detalhes do anúncio -->
+    <div class="modal-troca-overlay" id="modal-troca-overlay">
+        <div class="modal-troca" role="dialog" aria-modal="true" aria-labelledby="modal-troca-titulo">
+
+            <button type="button" class="modal-troca-fechar" id="fechar-modal-troca" aria-label="Fechar">
+                &times;
+            </button>
+
+            <div id="conteudo-modal-troca"></div>
+
+        </div>
+    </div>
+
+
+
+    <footer class="rodape">
+        <p>Quase Inédito — Todo livro merece uma nova história.</p>
+    </footer>
+
+</body>
+
+</html>

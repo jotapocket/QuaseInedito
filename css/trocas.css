@@ -1,0 +1,716 @@
+/* ==========================================
+   QUASE INÉDITO — PÁGINA DE TROCAS
+========================================== */
+
+/* ===== IDENTIDADE VISUAL ===== */
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+.pagina-trocas {
+    --troca-creme: #F8F2E9;
+    --troca-laranja: #F18B4B;
+    --troca-vinho: #6B2927;
+    --troca-escuro: #171313;
+    --troca-branco: #FFFFFF;
+
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 55px 0 90px;
+}
+
+/* ===== APRESENTAÇÃO ===== */
+
+.apresentacao-trocas {
+    position: relative;
+    overflow: hidden;
+    padding: 65px 75px;
+    margin-bottom: 75px;
+    border-radius: 24px;
+    background-color: var(--troca-creme);
+    background-image: url("../assets/Texture.WebP");
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(107, 41, 39, 0.12);
+}
+
+.apresentacao-trocas::after {
+    content: "TROCA";
+    position: absolute;
+    right: 35px;
+    bottom: -30px;
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(90px, 15vw, 180px);
+    font-weight: 700;
+    color: rgba(107, 41, 39, 0.055);
+    pointer-events: none;
+    transform: rotate(-8deg);
+}
+
+.apresentacao-trocas .subtitulo {
+    display: inline-block;
+    margin-bottom: 17px;
+    color: var(--troca-vinho);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.apresentacao-trocas h1 {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin-bottom: 20px;
+    color: var(--troca-vinho);
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.12;
+}
+
+.apresentacao-trocas p {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    color: var(--troca-escuro);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* ===== SEÇÃO DE ANÚNCIOS ===== */
+
+.catalogo-trocas {
+    width: 100%;
+}
+
+.catalogo-trocas .secao-titulo {
+    margin-bottom: 25px;
+}
+
+.catalogo-trocas .secao-titulo h2 {
+    margin-bottom: 8px;
+    color: var(--troca-vinho);
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    font-weight: 600;
+}
+
+.catalogo-trocas .secao-titulo p {
+    color: #655B55;
+    line-height: 1.6;
+}
+
+.informacoes-trocas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+#quantidade-trocas {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 15px;
+    border-radius: 30px;
+    background: rgba(241, 139, 75, 0.14);
+    color: var(--troca-vinho);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ===== GRADE DE LIVROS ===== */
+
+.grade-trocas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+/* ===== CARTÃO DE TROCA ===== */
+
+.cartao-troca {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(107, 41, 39, 0.12);
+    border-radius: 18px;
+    background: var(--troca-branco);
+    box-shadow: 0 5px 18px rgba(23, 19, 19, 0.045);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cartao-troca:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(23, 19, 19, 0.10);
+}
+
+.cartao-troca-imagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 260px;
+    padding: 22px;
+    overflow: hidden;
+    background: #F3EDE4;
+}
+
+.cartao-troca-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.cartao-troca:hover .cartao-troca-imagem img {
+    transform: scale(1.045);
+}
+
+.cartao-troca-conteudo {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px;
+}
+
+.etiqueta-troca {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 7px 12px;
+    margin-bottom: 13px;
+    border-radius: 5px;
+    background: #FCE9DC;
+    color: #914B2C;
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.cartao-troca h3 {
+    margin-bottom: 6px;
+    color: var(--troca-vinho);
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.troca-autor {
+    margin-bottom: 17px;
+    color: #756B64;
+    font-size: 0.9rem;
+}
+
+.troca-informacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    padding: 13px 0;
+    margin-bottom: 17px;
+    border-top: 1px solid #EEE7DE;
+    border-bottom: 1px solid #EEE7DE;
+    color: #655B55;
+    font-size: 0.82rem;
+}
+
+.botao-detalhes-troca {
+    width: 100%;
+    padding: 12px 18px;
+    margin-top: auto;
+    border: none;
+    border-radius: 9px;
+    background: var(--troca-vinho);
+    color: var(--troca-branco);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.botao-detalhes-troca:hover {
+    background: #8A3934;
+    transform: translateY(-2px);
+}
+
+/* ===== JANELA DE DETALHES ===== */
+
+.modal-troca-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    overflow-y: auto;
+    background: rgba(23, 19, 19, 0.72);
+    backdrop-filter: blur(4px);
+}
+
+.modal-troca-overlay.ativo {
+    display: flex;
+}
+
+.modal-troca {
+    position: relative;
+    width: min(900px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 20px;
+    background: var(--troca-creme);
+    box-shadow: 0 20px 65px rgba(0, 0, 0, 0.25);
+    animation: aparecer-modal-troca 0.25s ease;
+}
+
+@keyframes aparecer-modal-troca {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-troca-fechar {
+    position: absolute;
+    top: 15px;
+    right: 17px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: var(--troca-vinho);
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.modal-troca-fechar:hover {
+    background: #8A3934;
+}
+
+.modal-troca-conteudo {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+    gap: 35px;
+    padding: 45px;
+}
+
+.modal-troca-imagem {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 25px;
+    border-radius: 14px;
+    background: #EFE5D9;
+}
+
+.modal-troca-imagem img {
+    width: 100%;
+    max-height: 370px;
+    object-fit: contain;
+}
+
+.modal-troca-informacoes {
+    min-width: 0;
+}
+
+.modal-troca-informacoes h2 {
+    margin-bottom: 8px;
+    color: var(--troca-vinho);
+    font-family: "Fredoka", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.modal-troca-informacoes>p {
+    margin-bottom: 12px;
+    color: #514943;
+    line-height: 1.6;
+}
+
+.modal-troca-informacoes>p strong {
+    color: var(--troca-vinho);
+}
+
+.troca-descricao,
+.troca-procura {
+    margin-top: 22px;
+}
+
+.troca-descricao h3,
+.troca-procura h3,
+.form-proposta-troca h3 {
+    margin-bottom: 8px;
+    color: var(--troca-vinho);
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.troca-descricao p,
+.troca-procura p {
+    color: #514943;
+    line-height: 1.7;
+}
+
+/* ===== FORMULÁRIO DE PROPOSTA ===== */
+
+.form-proposta-troca {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    padding: 22px;
+    margin-top: 28px;
+    border: 1px solid rgba(107, 41, 39, 0.13);
+    border-radius: 14px;
+    background: #FFFDF9;
+}
+
+.form-proposta-troca>p {
+    color: #655B55;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.form-proposta-troca label {
+    margin-top: 5px;
+    color: var(--troca-vinho);
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.form-proposta-troca input,
+.form-proposta-troca textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #D9CEC2;
+    border-radius: 8px;
+    outline: none;
+    background: white;
+    color: var(--troca-escuro);
+    font: inherit;
+    font-size: 0.9rem;
+    resize: vertical;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-proposta-troca input:focus,
+.form-proposta-troca textarea:focus {
+    border-color: var(--troca-laranja);
+    box-shadow: 0 0 0 3px rgba(241, 139, 75, 0.16);
+}
+
+.form-proposta-troca .botao-principal {
+    width: 100%;
+    padding: 13px 18px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 9px;
+    background: var(--troca-vinho);
+    color: white;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.form-proposta-troca .botao-principal:hover {
+    background: #8A3934;
+}
+
+.form-proposta-troca .botao-principal:disabled {
+    background: #82716B;
+    cursor: not-allowed;
+}
+
+#mensagem-proposta-troca {
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.sucesso-proposta {
+    color: #287447;
+}
+
+.erro-proposta {
+    color: #B3261E;
+}
+
+/* ===== AVISOS ===== */
+
+.aviso-indisponivel {
+    padding: 16px;
+    margin-top: 25px;
+    border-left: 4px solid var(--troca-laranja);
+    border-radius: 7px;
+    background: #FCE9DC;
+    color: #713D27;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ===== ESTADOS DE FOCO ===== */
+
+.botao-detalhes-troca:focus-visible,
+.modal-troca-fechar:focus-visible {
+    outline: 3px solid var(--troca-laranja);
+    outline-offset: 3px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media (max-width: 950px) {
+    .grade-trocas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .apresentacao-trocas {
+        padding: 55px 45px;
+    }
+}
+
+@media (max-width: 650px) {
+    .pagina-trocas {
+        width: 92%;
+        padding: 35px 0 65px;
+    }
+
+    .apresentacao-trocas {
+        padding: 42px 28px;
+        margin-bottom: 55px;
+        border-radius: 17px;
+    }
+
+    .apresentacao-trocas h1 {
+        font-size: 2.25rem;
+    }
+
+    .apresentacao-trocas p {
+        font-size: 0.95rem;
+    }
+
+    .grade-trocas {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .cartao-troca-imagem {
+        height: 250px;
+    }
+
+    .modal-troca-overlay {
+        background: rgba(23, 19, 19, 0.78);
+        backdrop-filter: none;
+    }
+
+    .modal-troca {
+        background: #F8F2E9;
+        opacity: 1;
+        box-shadow: 0 20px 65px rgba(0, 0, 0, 0.35);
+    }
+
+    .modal-troca-conteudo {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 55px 22px 25px;
+    }
+
+    .modal-troca-imagem {
+        padding: 18px;
+    }
+
+    .modal-troca-imagem img {
+        max-height: 240px;
+    }
+
+    .modal-troca-informacoes h2 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .apresentacao-trocas {
+        padding: 35px 22px;
+    }
+
+    .apresentacao-trocas h1 {
+        font-size: 1.9rem;
+    }
+
+    .cartao-troca-conteudo {
+        padding: 18px;
+    }
+}
+
+/* ===== MOVIMENTO REDUZIDO ===== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cartao-troca,
+    .cartao-troca-imagem img,
+    .botao-detalhes-troca {
+        transition: none;
+    }
+
+    .modal-troca {
+        animation: none;
+    }
+}
+
+/* ==========================================
+   CORREÇÃO DEFINITIVA — LEGIBILIDADE DO MODAL
+========================================== */
+
+.modal-troca-overlay.ativo {
+    opacity: 1 !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    background: rgba(23, 19, 19, 0.82) !important;
+}
+
+.modal-troca-overlay.ativo .modal-troca {
+    opacity: 1 !important;
+    filter: none !important;
+    background: #F8F2E9 !important;
+    isolation: isolate;
+}
+
+/* Área interna do modal */
+.modal-troca-overlay.ativo .modal-troca-conteudo {
+    background: #F8F2E9 !important;
+    opacity: 1 !important;
+}
+
+/* Informações e textos */
+.modal-troca-overlay.ativo .modal-troca-informacoes,
+.modal-troca-overlay.ativo .modal-troca-informacoes h2,
+.modal-troca-overlay.ativo .modal-troca-informacoes p,
+.modal-troca-overlay.ativo .troca-descricao,
+.modal-troca-overlay.ativo .troca-procura {
+    opacity: 1 !important;
+    color: #171313;
+}
+
+/* Formulário */
+.modal-troca-overlay.ativo .form-proposta-troca {
+    background: #FFFDF9 !important;
+    opacity: 1 !important;
+}
+
+.modal-troca-overlay.ativo .form-proposta-troca input,
+.modal-troca-overlay.ativo .form-proposta-troca textarea {
+    background: #FFFFFF !important;
+    color: #171313 !important;
+    opacity: 1 !important;
+}
+
+/* LOGO COMPACTA — MESMO PADRÃO DA PÁGINA DE DOAÇÕES */
+
+.apresentacao-trocas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    min-height: 340px;
+    padding: 60px 70px;
+    margin-bottom: 75px;
+    border-radius: 24px;
+}
+
+.apresentacao-trocas-texto {
+    flex: 1;
+    min-width: 0;
+}
+
+.apresentacao-trocas-simbolo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 210px;
+    height: 210px;
+
+    border-radius: 50%;
+    background: rgba(241, 139, 75, 0.12);
+}
+
+.apresentacao-trocas-simbolo img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+/* TABLET */
+
+@media (max-width: 950px) {
+    .apresentacao-trocas {
+        padding: 50px 45px;
+    }
+
+    .apresentacao-trocas-simbolo {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+/* CELULAR */
+
+@media (max-width: 650px) {
+    .apresentacao-trocas {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+        padding: 40px 28px;
+        margin-bottom: 55px;
+        border-radius: 17px;
+    }
+
+    .apresentacao-trocas-simbolo {
+        width: 135px;
+        height: 135px;
+        align-self: center;
+    }
+}
+
+/* CELULARES PEQUENOS */
+
+@media (max-width: 380px) {
+    .apresentacao-trocas {
+        padding: 35px 22px;
+    }
+}

@@ -1,0 +1,417 @@
+
+/* ==========================================
+   QUASE INÉDITO — PÁGINA DE DOAÇÕES
+========================================== */
+
+/* ===== IDENTIDADE VISUAL ===== */
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+.pagina-doacoes {
+    --doacao-creme: #F8F2E9;
+    --doacao-laranja: #F18B4B;
+    --doacao-vinho: #6B2927;
+    --doacao-escuro: #171313;
+    --doacao-branco: #FFFFFF;
+
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 55px 0 90px;
+}
+
+/* ===== APRESENTAÇÃO ===== */
+
+.apresentacao-doacoes {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    min-height: 340px;
+    padding: 60px 70px;
+    margin-bottom: 75px;
+    overflow: hidden;
+    border: 1px solid rgba(107, 41, 39, 0.12);
+    border-radius: 24px;
+    background-color: var(--doacao-creme);
+    background-image: url("../assets/Texture.WebP");
+    background-size: cover;
+    background-position: center;
+}
+
+.apresentacao-doacoes::after {
+    content: "COMPARTILHE";
+    position: absolute;
+    right: 15px;
+    bottom: -35px;
+    color: rgba(107, 41, 39, 0.045);
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(75px, 12vw, 145px);
+    font-weight: 700;
+    pointer-events: none;
+}
+
+.apresentacao-doacoes-texto {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+}
+
+.subtitulo-doacoes {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--doacao-vinho);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.apresentacao-doacoes h1 {
+    margin-bottom: 20px;
+    color: var(--doacao-vinho);
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(2.3rem, 5vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.12;
+}
+
+.apresentacao-doacoes p {
+    max-width: 590px;
+    color: var(--doacao-escuro);
+    font-size: 1.02rem;
+    line-height: 1.8;
+}
+
+.apresentacao-doacoes-simbolo {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background: rgba(241, 139, 75, 0.12);
+}
+
+.apresentacao-doacoes-simbolo img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+/* ===== SEÇÃO DE DOAÇÕES ===== */
+
+.secao-doacoes {
+    width: 100%;
+}
+
+.cabecalho-doacoes {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.identificador-doacoes {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #A45D3D;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.cabecalho-doacoes h2 {
+    margin-bottom: 8px;
+    color: var(--doacao-vinho);
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 600;
+}
+
+.cabecalho-doacoes p {
+    color: #655B55;
+    line-height: 1.6;
+}
+
+.etiqueta-gratuita {
+    flex-shrink: 0;
+    padding: 10px 16px;
+    border: 1px solid rgba(107, 41, 39, 0.15);
+    border-radius: 30px;
+    background: #FCE9DC;
+    color: var(--doacao-vinho);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* ===== GRADE DE LIVROS ===== */
+
+.livros-lista {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    align-items: stretch;
+}
+
+/* ===== CARTÕES ===== */
+
+.livros-lista .cartao-troca {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(107, 41, 39, 0.12);
+    border-radius: 18px;
+    background: var(--doacao-branco);
+    box-shadow: 0 5px 18px rgba(23, 19, 19, 0.045);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.livros-lista .cartao-troca:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(23, 19, 19, 0.10);
+}
+
+.livros-lista .cartao-troca-imagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 260px;
+    padding: 22px;
+    overflow: hidden;
+    background: #F3EDE4;
+}
+
+.livros-lista .cartao-troca-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.livros-lista .cartao-troca:hover .cartao-troca-imagem img {
+    transform: scale(1.045);
+}
+
+.livros-lista .cartao-troca-conteudo {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px;
+}
+
+.livros-lista .etiqueta-troca {
+    display: inline-flex;
+    width: fit-content;
+    padding: 7px 12px;
+    margin-bottom: 13px;
+    border-radius: 5px;
+    background: #FCE9DC;
+    color: #914B2C;
+    font-size: 0.73rem;
+    font-weight: 700;
+}
+
+.livros-lista .cartao-troca h3 {
+    margin-bottom: 6px;
+    color: var(--doacao-vinho);
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.livros-lista .troca-autor {
+    margin-bottom: 16px;
+    color: #756B64;
+    font-size: 0.9rem;
+}
+
+.livros-lista .troca-informacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    padding: 13px 0;
+    margin-bottom: 15px;
+    border-top: 1px solid #EEE7DE;
+    border-bottom: 1px solid #EEE7DE;
+    color: #655B55;
+    font-size: 0.82rem;
+}
+
+.livros-lista .cartao-troca-conteudo > p:not(.troca-autor):not(.aviso-indisponivel) {
+    margin-bottom: 18px;
+    color: #514943;
+    font-size: 0.88rem;
+    line-height: 1.65;
+}
+
+/* ===== BOTÃO DE SOLICITAÇÃO ===== */
+
+.botao-solicitar-doacao {
+    width: 100%;
+    padding: 13px 18px;
+    margin-top: auto;
+    border: none;
+    border-radius: 9px;
+    background: var(--doacao-vinho);
+    color: white;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.botao-solicitar-doacao:hover {
+    background: #8A3934;
+    transform: translateY(-2px);
+}
+
+.botao-solicitar-doacao:focus-visible {
+    outline: 3px solid var(--doacao-laranja);
+    outline-offset: 3px;
+}
+
+/* ===== ANÚNCIO DO PRÓPRIO USUÁRIO ===== */
+
+.livros-lista .aviso-indisponivel {
+    width: 100%;
+    padding: 13px 15px;
+    margin-top: auto;
+    border-left: 4px solid var(--doacao-laranja);
+    border-radius: 7px;
+    background: #FCE9DC;
+    color: #713D27;
+    font-size: 0.86rem;
+    line-height: 1.5;
+}
+
+/* ===== ESTADO VAZIO ===== */
+
+.livros-lista .mensagem-vazia {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 230px;
+    padding: 40px;
+    border: 1px dashed rgba(107, 41, 39, 0.28);
+    border-radius: 18px;
+    background: var(--doacao-creme);
+    color: var(--doacao-vinho);
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media (max-width: 950px) {
+    .apresentacao-doacoes {
+        padding: 50px 45px;
+    }
+
+    .apresentacao-doacoes-simbolo {
+        width: 160px;
+        height: 160px;
+    }
+
+    .livros-lista {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .pagina-doacoes {
+        padding: 35px 0 65px;
+    }
+
+    .apresentacao-doacoes {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 28px;
+        margin-bottom: 55px;
+        border-radius: 17px;
+    }
+
+    .apresentacao-doacoes h1 {
+        font-size: 2.3rem;
+    }
+
+    .apresentacao-doacoes p {
+        font-size: 0.95rem;
+    }
+
+    .apresentacao-doacoes-simbolo {
+        align-self: center;
+        width: 135px;
+        height: 135px;
+    }
+
+    .cabecalho-doacoes {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .livros-lista {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .livros-lista .cartao-troca-imagem {
+        height: 250px;
+    }
+}
+
+@media (max-width: 380px) {
+    .apresentacao-doacoes {
+        padding: 35px 22px;
+    }
+
+    .apresentacao-doacoes h1 {
+        font-size: 1.95rem;
+    }
+
+    .livros-lista .cartao-troca-conteudo {
+        padding: 18px;
+    }
+}
+
+/* ===== MOVIMENTO REDUZIDO ===== */
+
+@media (prefers-reduced-motion: reduce) {
+    .livros-lista .cartao-troca,
+    .livros-lista .cartao-troca-imagem img,
+    .botao-solicitar-doacao {
+        transition: none;
+    }
+}

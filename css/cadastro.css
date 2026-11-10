@@ -1,0 +1,510 @@
+
+/* ==========================================
+   QUASE INÉDITO — PÁGINA DE CADASTRO
+========================================== */
+
+/* FONTES */
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/* ==========================================
+   VARIÁVEIS E ESTRUTURA
+========================================== */
+
+.pagina-autenticacao {
+    --cadastro-creme: #F8F2E9;
+    --cadastro-laranja: #F18B4B;
+    --cadastro-vinho: #6B2927;
+    --cadastro-escuro: #171313;
+    --cadastro-branco: #FFFFFF;
+    --cadastro-suave: #766C65;
+    --cadastro-borda: #E8DCCF;
+
+    min-height: calc(100vh - 150px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 65px 25px;
+    background: var(--cadastro-creme);
+}
+
+
+/* ==========================================
+   CARTÃO PRINCIPAL
+========================================== */
+
+.cartao-autenticacao {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    width: 100%;
+    max-width: 1050px;
+    min-height: 620px;
+
+    overflow: hidden;
+    border-radius: 25px;
+
+    background: var(--cadastro-branco);
+
+    border: 1px solid rgba(107, 41, 39, 0.08);
+
+    box-shadow:
+        0 18px 55px rgba(45, 29, 23, 0.10);
+}
+
+
+/* ==========================================
+   APRESENTAÇÃO
+========================================== */
+
+.autenticacao-apresentacao {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 65px 50px;
+
+    overflow: hidden;
+
+    background: var(--cadastro-creme);
+    background-image: url("../assets/Texture.WebP");
+    background-position: center;
+    background-size: cover;
+
+    border-right: 1px solid var(--cadastro-borda);
+}
+
+.autenticacao-apresentacao::before {
+    content: "QUASE INÉDITO";
+
+    position: absolute;
+    left: -15px;
+    bottom: 15px;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 700;
+
+    color: rgba(107, 41, 39, 0.045);
+
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.autenticacao-apresentacao::after {
+    content: "";
+
+    position: absolute;
+    top: 38px;
+    right: 35px;
+
+    width: 75px;
+    height: 75px;
+
+    background: url("../assets/Carimbo.png") center / contain no-repeat;
+
+    opacity: 0.55;
+    transform: rotate(9deg);
+
+    pointer-events: none;
+}
+
+.autenticacao-apresentacao .subtitulo {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: var(--cadastro-vinho);
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+.autenticacao-apresentacao h1 {
+    max-width: 390px;
+
+    margin: 0 0 22px;
+
+    color: var(--cadastro-vinho);
+
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(2.3rem, 4vw, 3.3rem);
+    font-weight: 600;
+
+    line-height: 1.12;
+}
+
+.autenticacao-apresentacao p {
+    max-width: 390px;
+
+    margin: 0;
+
+    color: #514640;
+
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   ÁREA DO FORMULÁRIO
+========================================== */
+
+.autenticacao-formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 55px 65px;
+}
+
+.titulo-formulario {
+    margin-bottom: 30px;
+}
+
+.titulo-formulario h2 {
+    margin: 0 0 8px;
+
+    color: var(--cadastro-escuro);
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.titulo-formulario p {
+    margin: 0;
+
+    color: var(--cadastro-suave);
+    font-size: 0.95rem;
+}
+
+
+/* ==========================================
+   CAMPOS
+========================================== */
+
+#formulario-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.campo-autenticacao {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo-autenticacao label {
+    color: var(--cadastro-escuro);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.campo-autenticacao input {
+    width: 100%;
+    min-height: 49px;
+
+    padding: 12px 15px;
+
+    border: 1px solid var(--cadastro-borda);
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #FFFDFA;
+    color: var(--cadastro-escuro);
+
+    font-family: inherit;
+    font-size: 0.92rem;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.campo-autenticacao input::placeholder {
+    color: #A69B91;
+}
+
+.campo-autenticacao input:hover {
+    border-color: #D8B9A4;
+}
+
+.campo-autenticacao input:focus {
+    border-color: var(--cadastro-laranja);
+
+    background: var(--cadastro-branco);
+
+    box-shadow: 0 0 0 3px rgba(241, 139, 75, 0.15);
+}
+
+
+/* ==========================================
+   MENSAGENS
+========================================== */
+
+.mensagem-autenticacao {
+    min-height: 20px;
+
+    margin: 0;
+
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+
+/* ==========================================
+   BOTÃO DE CADASTRO
+========================================== */
+
+.botao-autenticacao {
+    width: 100%;
+    min-height: 51px;
+
+    padding: 13px 20px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: var(--cadastro-vinho);
+    color: var(--cadastro-branco);
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.botao-autenticacao:hover {
+    background: #843632;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 16px rgba(107, 41, 39, 0.18);
+}
+
+.botao-autenticacao:active {
+    transform: translateY(0);
+}
+
+.botao-autenticacao:focus-visible {
+    outline: 3px solid var(--cadastro-laranja);
+    outline-offset: 4px;
+}
+
+
+/* ==========================================
+   ALTERNATIVA DE LOGIN
+========================================== */
+
+.alternativa-autenticacao {
+    margin: 25px 0 0;
+
+    color: var(--cadastro-suave);
+
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.alternativa-autenticacao a {
+    color: var(--cadastro-vinho);
+
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.alternativa-autenticacao a:hover {
+    color: var(--cadastro-laranja);
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .pagina-autenticacao {
+        padding: 45px 20px;
+    }
+
+    .cartao-autenticacao {
+        grid-template-columns: 0.85fr 1.15fr;
+        min-height: 590px;
+    }
+
+    .autenticacao-apresentacao {
+        padding: 45px 35px;
+    }
+
+    .autenticacao-formulario {
+        padding: 45px 38px;
+    }
+
+    .autenticacao-apresentacao::after {
+        width: 60px;
+        height: 60px;
+        right: 20px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .pagina-autenticacao {
+        min-height: auto;
+        padding: 30px 16px 45px;
+    }
+
+    .cartao-autenticacao {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        min-height: auto;
+
+        border-radius: 19px;
+    }
+
+    .autenticacao-apresentacao {
+        min-height: 235px;
+
+        padding: 40px 30px 35px;
+
+        border-right: none;
+        border-bottom: 1px solid var(--cadastro-borda);
+    }
+
+    .autenticacao-apresentacao::before {
+        font-size: 3rem;
+    }
+
+    .autenticacao-apresentacao::after {
+        top: 22px;
+        right: 20px;
+
+        width: 55px;
+        height: 55px;
+    }
+
+    .autenticacao-apresentacao .subtitulo {
+        max-width: 75%;
+        font-size: 0.7rem;
+    }
+
+    .autenticacao-apresentacao h1 {
+        max-width: 330px;
+
+        margin-bottom: 13px;
+
+        font-size: 2.25rem;
+    }
+
+    .autenticacao-apresentacao p {
+        font-size: 0.9rem;
+        line-height: 1.65;
+    }
+
+    .autenticacao-formulario {
+        padding: 38px 28px 35px;
+    }
+
+    .titulo-formulario {
+        margin-bottom: 25px;
+    }
+
+    .titulo-formulario h2 {
+        font-size: 1.75rem;
+    }
+
+    #formulario-cadastro {
+        gap: 17px;
+    }
+}
+
+
+@media (max-width: 380px) {
+
+    .pagina-autenticacao {
+        padding: 22px 12px 35px;
+    }
+
+    .autenticacao-apresentacao {
+        padding: 35px 23px 30px;
+    }
+
+    .autenticacao-apresentacao h1 {
+        font-size: 2rem;
+    }
+
+    .autenticacao-formulario {
+        padding: 32px 21px;
+    }
+
+    .campo-autenticacao input {
+        font-size: 0.86rem;
+    }
+}
+
+
+/* ==========================================
+   ACESSIBILIDADE
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .campo-autenticacao input,
+    .botao-autenticacao,
+    .alternativa-autenticacao a {
+        transition: none;
+    }
+
+    .botao-autenticacao:hover {
+        transform: none;
+    }
+}

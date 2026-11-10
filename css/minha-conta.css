@@ -1,0 +1,1232 @@
+
+/* ==========================================
+   MINHA CONTA — QUASE INÉDITO
+   Identidade visual da página
+========================================== */
+
+
+/* ==========================================
+   1. FONTES E VARIÁVEIS
+========================================== */
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+.pagina-minha-conta {
+    --conta-creme: #F8F2E9;
+    --conta-laranja: #F18B4B;
+    --conta-vinho: #6B2927;
+    --conta-escuro: #171313;
+    --conta-branco: #FFFFFF;
+    --conta-suave: #786E66;
+    --conta-borda: rgba(107, 41, 39, 0.14);
+
+    width: 92%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 65px 0 100px;
+    color: var(--conta-escuro);
+    font-family: inherit;
+}
+
+.pagina-minha-conta h1,
+.pagina-minha-conta h2,
+.pagina-minha-conta h3,
+.pagina-minha-conta h4 {
+    font-family: "Fredoka", sans-serif;
+}
+
+
+/* ==========================================
+   2. CABEÇALHO DA PÁGINA
+========================================== */
+
+.cabecalho-conta {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 65px 35px;
+    margin-bottom: 45px;
+    border-radius: 24px;
+    background: var(--conta-creme);
+    background-image: url("../assets/Texture.WebP");
+    background-position: center;
+    background-size: cover;
+    border: 1px solid rgba(107, 41, 39, 0.08);
+}
+
+.cabecalho-conta::after {
+    content: "LEITOR";
+    position: absolute;
+    right: -15px;
+    bottom: -45px;
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(6rem, 15vw, 12rem);
+    font-weight: 700;
+    color: rgba(107, 41, 39, 0.055);
+    pointer-events: none;
+    line-height: 1;
+}
+
+.cabecalho-conta .subtitulo {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--conta-vinho);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.cabecalho-conta h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 12px;
+    color: var(--conta-vinho);
+    font-size: clamp(2.4rem, 5vw, 3.7rem);
+    font-weight: 700;
+}
+
+.cabecalho-conta p {
+    position: relative;
+    z-index: 1;
+    max-width: 570px;
+    margin: 0 auto;
+    color: var(--conta-suave);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   3. RESUMO DO PERFIL
+========================================== */
+
+.resumo-perfil {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 30px 35px;
+    margin-bottom: 65px;
+    background: var(--conta-branco);
+    border: 1px solid var(--conta-borda);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(23, 19, 19, 0.045);
+}
+
+.avatar-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: var(--conta-vinho);
+    border: 5px solid var(--conta-creme);
+    color: var(--conta-creme);
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.informacoes-perfil {
+    min-width: 0;
+}
+
+.informacoes-perfil h2 {
+    margin: 0 0 5px;
+    color: var(--conta-vinho);
+    font-size: 1.55rem;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.informacoes-perfil p {
+    margin: 0 0 8px;
+    color: var(--conta-suave);
+    font-size: 0.92rem;
+    overflow-wrap: anywhere;
+}
+
+.informacoes-perfil span {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 30px;
+    background: rgba(241, 139, 75, 0.14);
+    color: var(--conta-vinho);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   4. TÍTULO DA ÁREA
+========================================== */
+
+.secoes-conta {
+    margin-bottom: 30px;
+}
+
+.titulo-secoes-conta {
+    margin-bottom: 25px;
+}
+
+.titulo-secoes-conta h2 {
+    margin: 0 0 5px;
+    color: var(--conta-vinho);
+    font-size: 1.9rem;
+    font-weight: 600;
+}
+
+.titulo-secoes-conta p {
+    margin: 0;
+    color: var(--conta-suave);
+    font-size: 0.92rem;
+}
+
+
+/* ==========================================
+   5. CARTÕES DA MINHA ÁREA
+========================================== */
+
+.grade-secoes-conta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.cartao-conta {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    min-height: 220px;
+    padding: 28px;
+    text-align: left;
+    background: var(--conta-branco);
+    border: 1px solid var(--conta-borda);
+    border-radius: 18px;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.cartao-conta:hover {
+    transform: translateY(-5px);
+    border-color: rgba(241, 139, 75, 0.65);
+    box-shadow: 0 12px 28px rgba(23, 19, 19, 0.08);
+}
+
+.cartao-conta:focus-visible {
+    outline: 3px solid var(--conta-laranja);
+    outline-offset: 4px;
+}
+
+.icone-conta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+    border-radius: 15px;
+    background: rgba(241, 139, 75, 0.15);
+    color: var(--conta-vinho);
+    font-size: 1.55rem;
+}
+
+.cartao-conta h3 {
+    margin: 0 0 7px;
+    color: var(--conta-vinho);
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.cartao-conta p {
+    margin: 0 0 20px;
+    color: var(--conta-suave);
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+
+.link-conta {
+    margin-top: auto;
+    color: var(--conta-vinho);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   6. ESTRUTURA DOS MODAIS
+========================================== */
+
+.modal-conta {
+    width: min(760px, 92%);
+    max-width: 760px;
+    max-height: 88vh;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid rgba(107, 41, 39, 0.18);
+    border-radius: 22px;
+    background: var(--conta-creme);
+    color: var(--conta-escuro);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+}
+
+.modal-conta[open] {
+    animation: conta-modal-entrada 0.2s ease;
+}
+
+.modal-conta::backdrop {
+    background: rgba(23, 19, 19, 0.78);
+    backdrop-filter: blur(3px);
+}
+
+@keyframes conta-modal-entrada {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.conteudo-modal {
+    max-height: 88vh;
+    padding: 32px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: var(--conta-creme);
+}
+
+.cabecalho-modal {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 22px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--conta-borda);
+}
+
+.cabecalho-modal h2 {
+    margin: 0 0 5px;
+    color: var(--conta-vinho);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.cabecalho-modal p {
+    margin: 0;
+    color: var(--conta-suave);
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.botao-fechar-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(107, 41, 39, 0.09);
+    color: var(--conta-vinho);
+    font-size: 1.7rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.botao-fechar-modal:hover {
+    background: rgba(107, 41, 39, 0.17);
+}
+
+
+/* ==========================================
+   7. INFORMAÇÕES PESSOAIS
+========================================== */
+
+.secao-detalhes-conta {
+    margin-bottom: 28px;
+}
+
+.secao-detalhes-conta > h3 {
+    margin: 0 0 18px;
+    color: var(--conta-vinho);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.dados-perfil {
+    display: grid;
+    gap: 12px;
+    padding: 20px;
+    border: 1px solid var(--conta-borda);
+    border-radius: 14px;
+    background: var(--conta-branco);
+}
+
+.dados-perfil p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.dados-perfil strong {
+    color: var(--conta-vinho);
+}
+
+.dados-perfil span {
+    overflow-wrap: anywhere;
+}
+
+
+/* ==========================================
+   8. BLOCOS DE CONFIGURAÇÃO
+========================================== */
+
+.bloco-configuracao {
+    padding: 24px;
+    margin-top: 22px;
+    border: 1px solid var(--conta-borda);
+    border-radius: 16px;
+    background: var(--conta-branco);
+}
+
+.titulo-configuracao {
+    margin-bottom: 20px;
+}
+
+.titulo-configuracao h3,
+.bloco-sair h3 {
+    margin: 0 0 5px;
+    color: var(--conta-vinho);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.titulo-configuracao p,
+.bloco-sair p {
+    margin: 0;
+    color: var(--conta-suave);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+
+/* ==========================================
+   9. FORMULÁRIOS
+========================================== */
+
+.bloco-configuracao form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.campo-formulario label,
+.secao-detalhes-conta form label {
+    color: var(--conta-vinho);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.campo-formulario input,
+.secao-detalhes-conta form input,
+.secao-detalhes-conta form textarea,
+.secao-detalhes-conta form select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid rgba(107, 41, 39, 0.22);
+    border-radius: 10px;
+    background: #FFFDF9;
+    color: var(--conta-escuro);
+    font: inherit;
+    font-size: 0.9rem;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.campo-formulario input:focus,
+.secao-detalhes-conta form input:focus,
+.secao-detalhes-conta form textarea:focus,
+.secao-detalhes-conta form select:focus {
+    outline: none;
+    border-color: var(--conta-laranja);
+    box-shadow: 0 0 0 3px rgba(241, 139, 75, 0.16);
+}
+
+.secao-detalhes-conta form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.bloco-configuracao form button,
+.secao-detalhes-conta form button,
+#botao-novo-anuncio {
+    align-self: flex-start;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 9px;
+    background: var(--conta-vinho);
+    color: var(--conta-branco);
+    font: inherit;
+    font-size: 0.86rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.bloco-configuracao form button:hover,
+.secao-detalhes-conta form button:hover,
+#botao-novo-anuncio:hover {
+    background: #843532;
+    transform: translateY(-1px);
+}
+
+.secao-detalhes-conta form button[type="button"],
+#botao-cancelar-anuncio {
+    background: #E9E1D7;
+    color: var(--conta-vinho);
+}
+
+.secao-detalhes-conta form button[type="button"]:hover,
+#botao-cancelar-anuncio:hover {
+    background: #DED2C5;
+}
+
+.mensagem-sucesso,
+.mensagem-erro {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.mensagem-sucesso {
+    color: #287044;
+}
+
+.mensagem-erro {
+    color: #A52F2F;
+}
+
+
+/* ==========================================
+   10. FORMULÁRIO DE ANÚNCIOS
+========================================== */
+
+#botao-novo-anuncio {
+    margin-bottom: 22px;
+    background: var(--conta-laranja);
+    color: var(--conta-escuro);
+}
+
+#botao-novo-anuncio:hover {
+    background: #E77B39;
+}
+
+#area-formulario-anuncio {
+    padding: 24px;
+    margin-bottom: 30px;
+    border: 1px solid var(--conta-borda);
+    border-radius: 15px;
+    background: var(--conta-branco);
+}
+
+#area-formulario-anuncio[hidden],
+#bloco-preco[hidden],
+#bloco-procura[hidden] {
+    display: none !important;
+}
+
+#area-formulario-anuncio h3 {
+    margin: 0 0 20px;
+    color: var(--conta-vinho);
+    font-size: 1.25rem;
+}
+
+#form-anuncio {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px 18px;
+}
+
+#form-anuncio label {
+    align-self: end;
+}
+
+#form-anuncio input,
+#form-anuncio select,
+#form-anuncio textarea {
+    min-width: 0;
+}
+
+#form-anuncio #descricao-anuncio,
+#form-anuncio label[for="descricao-anuncio"],
+#form-anuncio label[for="imagem-anuncio"],
+#form-anuncio #imagem-anuncio,
+#form-anuncio button,
+#form-anuncio #mensagem-anuncio {
+    grid-column: 1 / -1;
+}
+
+#form-anuncio #bloco-preco,
+#form-anuncio #bloco-procura {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+#form-anuncio #bloco-preco[hidden],
+#form-anuncio #bloco-procura[hidden] {
+    display: none;
+}
+
+#form-anuncio button {
+    justify-self: start;
+}
+
+
+/* ==========================================
+   11. LISTAS DE ANÚNCIOS
+========================================== */
+
+.lista-meus-anuncios {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.lista-meus-anuncios > h3 {
+    margin: 25px 0 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--conta-borda);
+    color: var(--conta-vinho);
+    font-size: 1.2rem;
+}
+
+.lista-meus-anuncios > div > p {
+    color: var(--conta-suave);
+    font-size: 0.88rem;
+}
+
+.meu-anuncio-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border: 1px solid var(--conta-borda);
+    border-radius: 14px;
+    background: var(--conta-branco);
+}
+
+.meu-anuncio-card > img {
+    flex-shrink: 0;
+    width: 85px;
+    height: 120px;
+    border-radius: 7px;
+    object-fit: cover;
+    background: var(--conta-creme);
+}
+
+.meu-anuncio-informacoes {
+    flex: 1;
+    min-width: 0;
+}
+
+.meu-anuncio-informacoes h4 {
+    margin: 0 0 6px;
+    color: var(--conta-vinho);
+    font-size: 1.1rem;
+    overflow-wrap: anywhere;
+}
+
+.meu-anuncio-informacoes p {
+    margin: 4px 0;
+    color: var(--conta-suave);
+    font-size: 0.83rem;
+    line-height: 1.5;
+}
+
+.acoes-anuncio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.acoes-anuncio button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 7px;
+    background: var(--conta-vinho);
+    color: white;
+    font: inherit;
+    font-size: 0.76rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.acoes-anuncio button:last-child {
+    background: #E9E1D7;
+    color: var(--conta-vinho);
+}
+
+
+/* ==========================================
+   12. MINHAS COMPRAS
+========================================== */
+
+.compra-card {
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid var(--conta-borda);
+    border-radius: 14px;
+    background: var(--conta-branco);
+}
+
+.compra-card h3 {
+    margin: 0 0 12px;
+    color: var(--conta-vinho);
+    font-size: 1.15rem;
+}
+
+.compra-card > p {
+    margin: 5px 0;
+    color: var(--conta-suave);
+    font-size: 0.85rem;
+}
+
+.itens-compra {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding: 15px 0;
+    margin: 14px 0;
+    border-top: 1px solid var(--conta-borda);
+    border-bottom: 1px solid var(--conta-borda);
+}
+
+.item-compra {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    color: var(--conta-escuro);
+    font-size: 0.85rem;
+}
+
+.item-compra span:first-child {
+    overflow-wrap: anywhere;
+}
+
+.item-compra span:last-child {
+    flex-shrink: 0;
+    color: var(--conta-suave);
+}
+
+.compra-card > strong {
+    color: var(--conta-vinho);
+    font-size: 1rem;
+}
+
+
+/* ==========================================
+   13. MINHAS TROCAS E DOAÇÕES
+========================================== */
+
+#propostas-enviadas,
+#propostas-recebidas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+#propostas-enviadas > p,
+#propostas-recebidas > p {
+    grid-column: 1 / -1;
+    color: var(--conta-suave);
+    font-size: 0.88rem;
+}
+
+.proposta-card {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid var(--conta-borda);
+    border-radius: 14px;
+    background: var(--conta-branco);
+}
+
+.etiqueta-negociacao {
+    display: inline-block;
+    padding: 5px 11px;
+    margin-bottom: 12px;
+    border-radius: 30px;
+    background: rgba(241, 139, 75, 0.18);
+    color: var(--conta-vinho);
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.proposta-card h3 {
+    margin: 0 0 10px;
+    color: var(--conta-vinho);
+    font-size: 1.08rem;
+    overflow-wrap: anywhere;
+}
+
+.proposta-card p {
+    margin: 7px 0;
+    color: var(--conta-suave);
+    font-size: 0.82rem;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+
+.status-proposta {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--conta-vinho);
+    font-size: 0.82rem;
+}
+
+.acoes-proposta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.acoes-proposta button,
+.proposta-card > button {
+    padding: 9px 13px;
+    border: none;
+    border-radius: 8px;
+    background: var(--conta-vinho);
+    color: white;
+    font: inherit;
+    font-size: 0.77rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.acoes-proposta button:last-child {
+    background: #E9E1D7;
+    color: var(--conta-vinho);
+}
+
+.proposta-card > button {
+    margin-top: 12px;
+    background: var(--conta-laranja);
+    color: var(--conta-escuro);
+}
+
+
+/* ==========================================
+   14. ENCERRAR SESSÃO
+========================================== */
+
+.bloco-sair {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-color: rgba(165, 47, 47, 0.2);
+}
+
+.bloco-sair button {
+    flex-shrink: 0;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 9px;
+    background: #A52F2F;
+    color: white;
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.bloco-sair button:hover {
+    background: #842424;
+}
+
+
+/* ==========================================
+   15. RODAPÉ
+========================================== */
+
+.pagina-minha-conta + .rodape {
+    margin-top: 0;
+}
+
+
+/* ==========================================
+   16. ACESSIBILIDADE
+========================================== */
+
+.pagina-minha-conta button:focus-visible,
+.modal-conta button:focus-visible {
+    outline: 3px solid var(--conta-laranja);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pagina-minha-conta *,
+    .modal-conta * {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* ==========================================
+   17. RESPONSIVIDADE — TABLET
+========================================== */
+
+@media (max-width: 850px) {
+
+    .pagina-minha-conta {
+        width: 94%;
+        padding-top: 45px;
+    }
+
+    .cabecalho-conta {
+        padding: 55px 25px;
+    }
+
+    .grade-secoes-conta {
+        gap: 15px;
+    }
+
+    .cartao-conta {
+        min-height: 205px;
+        padding: 23px;
+    }
+
+    #propostas-enviadas,
+    #propostas-recebidas {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ==========================================
+   18. RESPONSIVIDADE — CELULAR
+========================================== */
+
+@media (max-width: 600px) {
+
+    .pagina-minha-conta {
+        width: 92%;
+        padding: 30px 0 65px;
+    }
+
+    .cabecalho-conta {
+        padding: 42px 22px;
+        margin-bottom: 28px;
+        border-radius: 17px;
+    }
+
+    .cabecalho-conta h1 {
+        font-size: 2.45rem;
+    }
+
+    .cabecalho-conta p {
+        font-size: 0.9rem;
+    }
+
+    .resumo-perfil {
+        gap: 16px;
+        padding: 22px 18px;
+        margin-bottom: 45px;
+        border-radius: 15px;
+    }
+
+    .avatar-perfil {
+        width: 68px;
+        height: 68px;
+        font-size: 1.4rem;
+    }
+
+    .informacoes-perfil h2 {
+        font-size: 1.2rem;
+    }
+
+    .informacoes-perfil p {
+        font-size: 0.8rem;
+    }
+
+    .informacoes-perfil span {
+        font-size: 0.68rem;
+    }
+
+    .titulo-secoes-conta h2 {
+        font-size: 1.65rem;
+    }
+
+    .grade-secoes-conta {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .cartao-conta {
+        min-height: auto;
+        padding: 22px;
+    }
+
+    .icone-conta {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 13px;
+    }
+
+    .cartao-conta h3 {
+        font-size: 1.2rem;
+    }
+
+    .cartao-conta p {
+        margin-bottom: 13px;
+    }
+
+    .modal-conta {
+        width: 94%;
+        max-height: 90vh;
+        border-radius: 16px;
+    }
+
+    .conteudo-modal {
+        max-height: 90vh;
+        padding: 22px 17px;
+    }
+
+    .cabecalho-modal h2 {
+        font-size: 1.5rem;
+    }
+
+    .cabecalho-modal p {
+        font-size: 0.8rem;
+    }
+
+    .bloco-configuracao {
+        padding: 19px 16px;
+    }
+
+    #form-anuncio {
+        grid-template-columns: 1fr;
+    }
+
+    #form-anuncio label,
+    #form-anuncio input,
+    #form-anuncio select,
+    #form-anuncio textarea,
+    #form-anuncio button,
+    #form-anuncio #bloco-preco,
+    #form-anuncio #bloco-procura,
+    #form-anuncio #mensagem-anuncio {
+        grid-column: 1;
+    }
+
+    .meu-anuncio-card {
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .meu-anuncio-card > img {
+        width: 68px;
+        height: 100px;
+    }
+
+    .meu-anuncio-informacoes h4 {
+        font-size: 0.98rem;
+    }
+
+    .acoes-anuncio {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .acoes-anuncio button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .item-compra {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .bloco-sair {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .bloco-sair button {
+        width: 100%;
+    }
+
+}
+
+
+/* ==========================================
+   19. CELULARES PEQUENOS
+========================================== */
+
+@media (max-width: 380px) {
+
+    .resumo-perfil {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .avatar-perfil {
+        width: 60px;
+        height: 60px;
+    }
+
+    .cabecalho-conta h1 {
+        font-size: 2.1rem;
+    }
+
+    .conteudo-modal {
+        padding: 18px 13px;
+    }
+
+    .meu-anuncio-card {
+        flex-direction: column;
+    }
+
+    .meu-anuncio-card > img {
+        width: 95px;
+        height: 135px;
+    }
+
+}
+
+/* ==========================================
+   AJUSTE DOS CARTÕES DE MEUS ANÚNCIOS
+========================================== */
+
+.meu-anuncio-card {
+    display: grid !important;
+    grid-template-columns: 100px minmax(0, 1fr);
+    align-items: start;
+    gap: 22px;
+    width: 100%;
+    padding: 18px;
+}
+
+.meu-anuncio-card > img {
+    width: 100px !important;
+    height: 145px !important;
+    min-width: 0;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.meu-anuncio-informacoes {
+    width: 100%;
+    min-width: 0;
+}
+
+.meu-anuncio-informacoes h4 {
+    margin-bottom: 8px;
+    font-size: 1.15rem;
+}
+
+.meu-anuncio-informacoes p {
+    margin: 6px 0;
+    line-height: 1.5;
+}
+
+.acoes-anuncio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 15px;
+}
+
+.acoes-anuncio button {
+    width: auto;
+    max-width: 100%;
+    padding: 9px 13px;
+    white-space: normal;
+}
+
+@media (max-width: 600px) {
+    .meu-anuncio-card {
+        grid-template-columns: 75px minmax(0, 1fr);
+        gap: 14px;
+        padding: 13px;
+    }
+
+    .meu-anuncio-card > img {
+        width: 75px !important;
+        height: 110px !important;
+    }
+
+    .acoes-anuncio {
+        flex-direction: row;
+    }
+
+    .acoes-anuncio button {
+        width: auto;
+        font-size: 0.72rem;
+    }
+}

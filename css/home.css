@@ -1,0 +1,893 @@
+/* =========================================================
+   QUASE INÉDITO — IDENTIDADE VISUAL
+   Página inicial | home.css
+   ========================================================= */
+
+
+/* =========================================================
+   01. FONTES
+   ========================================================= */
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../assets/fonts/Fredoka-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* =========================================================
+   02. IDENTIDADE VISUAL
+   ========================================================= */
+
+:root {
+    --qi-creme: #F8F2E9;
+    --qi-laranja: #F18B4B;
+    --qi-vinho: #6B2927;
+    --qi-escuro: #171313;
+    --qi-branco: #FFFFFF;
+
+    --qi-textura: url("../assets/Texture.WebP");
+
+    --qi-fredoka: "Fredoka", sans-serif;
+
+    --qi-sombra: 0 8px 24px rgba(23, 19, 19, 0.08);
+    --qi-sombra-forte: 0 14px 35px rgba(23, 19, 19, 0.13);
+
+    --qi-raio: 18px;
+    --qi-transicao: 0.25s ease;
+}
+
+
+/* =========================================================
+   03. TÍTULOS E DESTAQUES
+   ========================================================= */
+
+.banner h1,
+.vitrine h2,
+.circulacao h2,
+.clube h2,
+.chamada-final h2,
+.carrossel-cabecalho h3 {
+    font-family: var(--qi-fredoka);
+    font-weight: 600;
+}
+
+.banner h1 {
+    color: var(--qi-vinho);
+}
+
+.vitrine h2,
+.circulacao h2,
+.clube h2,
+.chamada-final h2 {
+    color: var(--qi-vinho);
+}
+
+
+/* =========================================================
+   04. BANNER PRINCIPAL
+   ========================================================= */
+
+.banner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 50px;
+
+    width: min(1200px, 90%);
+    min-height: 490px;
+
+    margin: 45px auto 90px;
+    padding: 65px 55px;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    background-color: var(--qi-creme);
+    background-image: var(--qi-textura);
+    background-size: cover;
+
+    border-radius: 28px;
+}
+
+.banner-conteudo {
+    position: relative;
+    z-index: 2;
+}
+
+.banner .subtitulo {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: var(--qi-laranja);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.banner h1 {
+    max-width: 580px;
+
+    margin-bottom: 22px;
+
+    font-size: clamp(2.7rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+}
+
+.banner-conteudo>p {
+    max-width: 490px;
+
+    color: var(--qi-escuro);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.banner-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+
+    margin-top: 30px;
+}
+
+.banner-botoes a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+    padding: 13px 24px;
+
+    border-radius: 9px;
+
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        transform var(--qi-transicao),
+        background var(--qi-transicao),
+        box-shadow var(--qi-transicao);
+}
+
+.banner-botoes a:hover {
+    transform: translateY(-3px);
+}
+
+.banner-botoes a:first-child {
+    color: var(--qi-branco);
+    background: var(--qi-vinho);
+    box-shadow: 0 5px 14px rgba(107, 41, 39, 0.2);
+}
+
+.banner-botoes a:first-child:hover {
+    background: var(--qi-escuro);
+}
+
+.banner-botoes a:last-child {
+    color: var(--qi-vinho);
+    border: 1px solid var(--qi-vinho);
+    background: transparent;
+}
+
+.banner-botoes a:last-child:hover {
+    background: rgba(107, 41, 39, 0.08);
+}
+
+.banner-assinatura {
+    margin-top: 32px;
+
+    color: var(--qi-vinho);
+    font-family: var(--qi-fredoka);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.banner-imagem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 330px;
+}
+
+.banner-imagem-fundo {
+    position: absolute;
+    width: 85%;
+    aspect-ratio: 1;
+
+    background: var(--qi-laranja);
+    border-radius: 50%;
+
+    opacity: 0.16;
+}
+
+.banner-imagem>img {
+    position: relative;
+    z-index: 1;
+
+    width: min(75%, 300px);
+    max-height: 300px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   05. VITRINE
+   ========================================================= */
+
+.vitrine {
+    width: min(1200px, 90%);
+    margin: 0 auto 100px;
+}
+
+.vitrine>h2 {
+    margin-bottom: 12px;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.vitrine>p {
+    color: #665B55;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   06. CARROSSÉIS
+   ========================================================= */
+
+.secao-carrossel {
+    margin-top: 48px;
+}
+
+.carrossel-cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+.carrossel-cabecalho h3 {
+    color: var(--qi-vinho);
+    font-size: 1.6rem;
+}
+
+.carrossel-controles {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.carrossel-ver-todos {
+    color: var(--qi-vinho);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.carrossel-ver-todos:hover {
+    color: var(--qi-laranja);
+}
+
+.carrossel-seta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    color: var(--qi-vinho);
+    background: var(--qi-creme);
+
+    border: 1px solid rgba(107, 41, 39, 0.15);
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: var(--qi-transicao);
+}
+
+.carrossel-seta:hover {
+    color: var(--qi-branco);
+    background: var(--qi-vinho);
+}
+
+.carrossel-trilho {
+    display: flex;
+    gap: 20px;
+
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--qi-laranja) transparent;
+
+    padding: 5px 3px 20px;
+}
+
+.cartao-vitrine {
+    flex: 0 0 205px;
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: var(--qi-branco);
+    border: 1px solid rgba(107, 41, 39, 0.09);
+    border-radius: 14px;
+
+    box-shadow: 0 3px 12px rgba(23, 19, 19, 0.04);
+
+    transition:
+        transform var(--qi-transicao),
+        box-shadow var(--qi-transicao);
+}
+
+.cartao-vitrine:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--qi-sombra);
+}
+
+.cartao-vitrine-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.cartao-vitrine-imagem {
+    display: block;
+
+    width: 100%;
+    height: 245px;
+
+    object-fit: cover;
+    background: var(--qi-creme);
+}
+
+.cartao-vitrine h4 {
+    margin: 14px 14px 5px;
+
+    color: var(--qi-escuro);
+    font-family: var(--qi-fredoka);
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.cartao-vitrine p {
+    margin: 0 14px 12px;
+
+    color: #776C65;
+    font-size: 0.85rem;
+}
+
+.cartao-vitrine .preco {
+    color: var(--qi-vinho);
+    font-weight: 700;
+}
+
+.cartao-vitrine .botao-comprar {
+    display: block;
+
+    width: calc(100% - 28px);
+    margin: 0 14px 14px;
+    padding: 10px;
+
+    color: var(--qi-branco);
+    background: var(--qi-vinho);
+
+    border: none;
+    border-radius: 7px;
+
+    font-weight: 700;
+    cursor: pointer;
+
+    transition: background var(--qi-transicao);
+}
+
+.cartao-vitrine .botao-comprar:hover {
+    background: var(--qi-laranja);
+}
+
+
+/* =========================================================
+   07. CIRCULAÇÃO DE LIVROS
+   ========================================================= */
+
+.circulacao {
+    position: relative;
+
+    padding: 85px 5%;
+
+    background-color: var(--qi-creme);
+    background-image: var(--qi-textura);
+    background-size: cover;
+}
+
+.circulacao>h2 {
+    max-width: 800px;
+    margin: 0 auto 15px;
+
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.circulacao>p {
+    max-width: 650px;
+    margin: 0 auto 45px;
+
+    color: #665B55;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.circulacao-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+
+    width: min(1100px, 100%);
+    margin: 0 auto;
+}
+
+.circulacao-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-height: 275px;
+    padding: 30px;
+
+    background: var(--qi-branco);
+    border: 1px solid rgba(107, 41, 39, 0.09);
+    border-radius: var(--qi-raio);
+
+    box-shadow: var(--qi-sombra);
+
+    transition:
+        transform var(--qi-transicao),
+        box-shadow var(--qi-transicao);
+}
+
+.circulacao-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--qi-sombra-forte);
+}
+
+.circulacao-card>span {
+    color: var(--qi-laranja);
+    font-family: var(--qi-fredoka);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.circulacao-card h3 {
+    margin: 15px 0 10px;
+
+    color: var(--qi-vinho);
+    font-family: var(--qi-fredoka);
+    font-size: 1.5rem;
+}
+
+.circulacao-card p {
+    color: #665B55;
+    line-height: 1.7;
+}
+
+.circulacao-card a {
+    margin-top: auto;
+    padding-top: 22px;
+
+    color: var(--qi-vinho);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.circulacao-card a:hover {
+    color: var(--qi-laranja);
+}
+
+
+/* =========================================================
+   08. CLUBE DO LIVRO
+   ========================================================= */
+
+.clube {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 45px;
+
+    width: min(1100px, 90%);
+    margin: 100px auto;
+    padding: 55px;
+
+    color: var(--qi-branco);
+    background: var(--qi-vinho);
+
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.clube h2 {
+    margin-bottom: 15px;
+
+    color: var(--qi-branco);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.clube p {
+    max-width: 620px;
+
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.8;
+}
+
+.clube a {
+    display: inline-flex;
+    margin-top: 22px;
+    padding: 13px 24px;
+
+    color: var(--qi-vinho);
+    background: var(--qi-creme);
+
+    border-radius: 8px;
+
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: var(--qi-transicao);
+}
+
+.clube a:hover {
+    color: var(--qi-escuro);
+    background: var(--qi-laranja);
+}
+
+.clube-detalhe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clube-detalhe img {
+    width: 145px;
+    max-width: 100%;
+
+    transform: rotate(-10deg);
+}
+
+
+/* =========================================================
+   09. CHAMADA FINAL
+   ========================================================= */
+
+.chamada-final {
+    width: min(1000px, 90%);
+    margin: 0 auto 100px;
+    padding: 55px 30px;
+
+    text-align: center;
+
+    background-color: var(--qi-creme);
+    background-image: var(--qi-textura);
+    background-size: cover;
+
+    border-radius: 22px;
+}
+
+.chamada-final h2 {
+    margin-bottom: 15px;
+
+    color: var(--qi-vinho);
+    font-size: clamp(2rem, 4vw, 2.7rem);
+}
+
+.chamada-final p {
+    max-width: 620px;
+    margin: 0 auto;
+
+    color: #665B55;
+    line-height: 1.8;
+}
+
+.chamada-final a {
+    display: inline-flex;
+    margin-top: 25px;
+    padding: 13px 25px;
+
+    color: var(--qi-branco);
+    background: var(--qi-vinho);
+
+    border-radius: 8px;
+
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: var(--qi-transicao);
+}
+
+.chamada-final a:hover {
+    background: var(--qi-laranja);
+}
+
+
+/* =========================================================
+   10. RODAPÉ
+   ========================================================= */
+
+.rodape {
+    padding: 55px 5% 22px;
+
+    color: var(--qi-creme);
+    background: var(--qi-escuro);
+}
+
+.rodape-conteudo {
+    display: flex;
+    justify-content: space-between;
+    gap: 45px;
+
+    width: min(1150px, 100%);
+    margin: 0 auto 40px;
+}
+
+.rodape-marca {
+    max-width: 350px;
+}
+
+.rodape-marca img {
+    width: 170px;
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+
+.rodape-marca p {
+    color: rgba(248, 242, 233, 0.72);
+    line-height: 1.7;
+}
+
+.rodape-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.rodape-links h3 {
+    margin-bottom: 15px;
+
+    color: var(--qi-laranja);
+    font-family: var(--qi-fredoka);
+    font-size: 1.1rem;
+}
+
+.rodape-links a {
+    display: block;
+    margin-bottom: 10px;
+
+    color: var(--qi-creme);
+    text-decoration: none;
+
+    transition: color var(--qi-transicao);
+}
+
+.rodape-links a:hover {
+    color: var(--qi-laranja);
+}
+
+.rodape-base {
+    width: min(1150px, 100%);
+    margin: 0 auto;
+    padding-top: 20px;
+
+    color: rgba(248, 242, 233, 0.6);
+    border-top: 1px solid rgba(248, 242, 233, 0.15);
+
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+
+/* =========================================================
+   11. ACESSIBILIDADE E MOVIMENTO
+   ========================================================= */
+
+.banner a:focus-visible,
+.circulacao-card a:focus-visible,
+.clube a:focus-visible,
+.chamada-final a:focus-visible,
+.rodape a:focus-visible,
+.carrossel-seta:focus-visible,
+.botao-comprar:focus-visible {
+    outline: 3px solid var(--qi-laranja);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .banner-botoes a,
+    .cartao-vitrine,
+    .circulacao-card,
+    .carrossel-seta,
+    .clube a,
+    .chamada-final a {
+        transition: none;
+    }
+
+    .carrossel-trilho {
+        scroll-behavior: auto;
+    }
+}
+
+
+/* =========================================================
+   12. RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .banner {
+        gap: 25px;
+        padding: 45px 35px;
+    }
+
+    .circulacao-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .clube {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 650px) {
+    .banner {
+        grid-template-columns: 1fr;
+        gap: 15px;
+
+        width: 92%;
+        margin: 25px auto 65px;
+        padding: 38px 25px;
+    }
+
+    .banner h1 {
+        font-size: clamp(2.5rem, 11vw, 3.5rem);
+    }
+
+    .banner-conteudo>p {
+        font-size: 0.95rem;
+    }
+
+    .banner-imagem {
+        min-height: 230px;
+    }
+
+    .banner-imagem>img:not(.banner-carimbo) {
+        max-height: 230px;
+    }
+
+    .banner-imagem>img {
+        max-height: 230px;
+    }
+
+    .vitrine {
+        width: 92%;
+        margin-bottom: 70px;
+    }
+
+    .carrossel-cabecalho {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .carrossel-cabecalho h3 {
+        font-size: 1.35rem;
+    }
+
+    .cartao-vitrine {
+        flex-basis: 170px;
+    }
+
+    .cartao-vitrine-imagem {
+        height: 210px;
+    }
+
+    .circulacao {
+        padding: 65px 4%;
+    }
+
+    .circulacao-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .circulacao-card {
+        min-height: 230px;
+    }
+
+    .clube {
+        grid-template-columns: 1fr;
+        gap: 25px;
+
+        width: 92%;
+        margin: 70px auto;
+        padding: 35px 25px;
+    }
+
+    .clube-detalhe img {
+        width: 110px;
+    }
+
+    .chamada-final {
+        width: 92%;
+        margin-bottom: 70px;
+        padding: 40px 22px;
+    }
+
+    .rodape-conteudo {
+        flex-direction: column;
+    }
+
+    .rodape-links {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 380px) {
+    .banner-botoes {
+        flex-direction: column;
+    }
+
+    .banner-botoes a {
+        width: 100%;
+    }
+
+    .cartao-vitrine {
+        flex-basis: 155px;
+    }
+
+    .rodape-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

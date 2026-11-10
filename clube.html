@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quase Inédito | Clube do Livro</title>
+
+    <link rel="icon" type="image/png" href="assets/QuaseInéditoIcon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/clube.css">
+
+    <script src="js/produtos.js" defer></script>
+    <script src="js/clube.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <a href="index.html" class="marca" aria-label="Quase Inédito - Página inicial">
+            <img src="assets/logo.png" alt="Logo Quase Inédito">
+        </a>
+
+        <nav class="navegacao">
+            <a href="index.html">Início</a>
+            <a href="index.html#catalogo">Comprar</a>
+            <a href="trocas.html">Trocas</a>
+            <a href="doacoes.html">Doações</a>
+            <a href="biblioteca.html">Biblioteca digital</a>
+            <a href="clube.html" class="ativo">Clube do livro</a>
+        </nav>
+
+        <form action="pesquisa.html" method="GET" class="barra-pesquisa">
+            <input type="search" name="q" placeholder="Pesquisar livros ou autores..."
+                aria-label="Pesquisar livros ou autores">
+
+            <button type="submit" aria-label="Pesquisar">
+                &#128269;
+            </button>
+        </form>
+
+        <div class="acoes-usuario">
+            <a href="carrinho.html" class="link-login">
+                Carrinho <span id="contador-carrinho">0</span>
+            </a>
+            <a href="login.html" class="link-login">Entrar</a>
+            <a href="cadastro.html" class="botao-cadastro">Criar conta</a>
+
+        </div>
+
+    </header>
+
+
+    <main class="pagina-clube">
+
+        <!-- APRESENTAÇÃO -->
+        <section class="apresentacao-clube">
+
+            <div class="apresentacao-clube-texto">
+                <span>QUASE INÉDITO APRESENTA</span>
+
+                <h1>Clube do Livro</h1>
+
+                <p>
+                    Cada livro guarda uma história.
+                    Cada leitor tem uma perspectiva.
+                    Aqui, compartilhamos os dois.
+                </p>
+            </div>
+
+            <div class="apresentacao-clube-simbolo">
+                <img src="assets/QuaseInéditoIcon.png" alt="" aria-hidden="true">
+            </div>
+
+        </section>
+
+
+        <!-- ÁREA PRINCIPAL: ESTANTE, FÓRUM E LEITORES -->
+        <div class="grade-clube">
+
+
+            <!-- COLUNA ESQUERDA: ESTANTE -->
+            <aside class="coluna-estante">
+
+                <section class="secao-estante">
+
+                    <div class="cabecalho-secao-clube">
+
+                        <span class="subtitulo-clube">MINHAS LEITURAS</span>
+
+                        <h2>Minha estante</h2>
+
+                        <p>
+                            Organize seus livros e acompanhe
+                            sua jornada de leitura.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" id="botao-adicionar-livro">
+                        + Adicionar livro
+                    </button>
+
+
+                    <div class="resumo-estante">
+
+                        <div class="item-resumo-estante">
+                            <span id="total-lendo">0</span>
+                            <p>Lendo</p>
+                        </div>
+
+                        <div class="item-resumo-estante">
+                            <span id="total-quero-ler">0</span>
+                            <p>Quero ler</p>
+                        </div>
+
+                        <div class="item-resumo-estante">
+                            <span id="total-lidos">0</span>
+                            <p>Já li</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="filtros-estante">
+
+                        <button type="button" class="filtro-estante ativo" data-filtro="todos">
+                            Todos
+                        </button>
+
+                        <button type="button" class="filtro-estante" data-filtro="lendo">
+                            Lendo
+                        </button>
+
+                        <button type="button" class="filtro-estante" data-filtro="quero-ler">
+                            Quero ler
+                        </button>
+
+                        <button type="button" class="filtro-estante" data-filtro="lidos">
+                            Já li
+                        </button>
+
+                    </div>
+
+
+                    <div id="lista-estante" class="lista-estante">
+
+                        <p class="mensagem-vazia">
+                            Sua estante está vazia.
+                            Adicione seu primeiro livro!
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </aside>
+
+
+
+            <!-- COLUNA CENTRAL: FÓRUM -->
+            <section class="coluna-forum">
+
+                <section class="secao-forum">
+
+                    <div class="cabecalho-secao-clube">
+
+                        <span class="subtitulo-clube">COMPARTILHE EXPERIÊNCIAS</span>
+
+                        <h2>Fórum de leitores</h2>
+
+                        <p>
+                            Converse sobre livros, compartilhe opiniões
+                            e descubra novas leituras.
+                        </p>
+
+                    </div>
+
+
+                    <!-- FORMULÁRIO DE PUBLICAÇÃO -->
+                    <div id="area-publicar">
+
+                        <form id="form-publicacao">
+
+                            <label for="texto-publicacao">
+                                O que você gostaria de compartilhar?
+                            </label>
+
+                            <textarea id="texto-publicacao"
+                                placeholder="Conte sobre uma leitura, faça uma recomendação ou inicie uma discussão..."
+                                required></textarea>
+
+                            <button type="submit">
+                                Publicar
+                            </button>
+
+                        </form>
+
+                    </div>
+
+
+                    <!-- PUBLICAÇÕES -->
+                    <div id="lista-publicacoes"></div>
+
+                </section>
+
+            </section>
+
+
+
+            <!-- COLUNA DIREITA: LEITORES -->
+            <aside class="coluna-amigos">
+
+                <section class="secao-amigos">
+
+                    <span class="subtitulo-clube">
+                        COMUNIDADE
+                    </span>
+
+                    <h2>Leitores para conhecer</h2>
+
+                    <p>
+                        Descubra pessoas que compartilham
+                        seu interesse pela leitura.
+                    </p>
+
+
+                    <div class="area-pesquisa-amigos">
+
+                        <input type="search" placeholder="Pesquisar leitores..." disabled>
+
+                        <button type="button" disabled>
+                            Pesquisar
+                        </button>
+
+                    </div>
+
+
+                    <div class="aviso-indisponivel">
+
+                        <span>Em breve</span>
+
+                        <p>
+                            A busca por leitores e as recomendações
+                            de perfis estarão disponíveis futuramente.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </aside>
+
+
+        </div>
+
+
+
+        <!-- CLUBE PRESENCIAL -->
+        <section class="secao-clube-presencial">
+
+            <div class="conteudo-clube-presencial">
+
+                <span>ALÉM DAS PÁGINAS</span>
+
+                <h2>Faça parte do clube!</h2>
+
+                <p>
+                    Nossa comunidade também acontece fora das telas.
+                    Participe dos encontros na biblioteca da escola,
+                    conheça outros leitores e compartilhe suas histórias.
+                </p>
+
+                <p>
+                    Entre no grupo oficial do WhatsApp para acompanhar
+                    as novidades e a organização dos encontros.
+                </p>
+
+            </div>
+
+
+            <div class="qr-code-clube">
+
+                <div id="imagem-qr-code">
+                    <!-- Inseriremos o QR Code oficial aqui -->
+                </div>
+
+                <span>
+                    Aponte a câmera e participe!
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <p>
+            &copy; 2026 Quase Inédito. Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

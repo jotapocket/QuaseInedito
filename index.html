@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quase Inédito: descubra, compre, troque e doe livros.">
+    <meta name="theme-color" content="#F8F2E9">
+
+    <title>Quase Inédito | Um livro, novas possibilidades</title>
+
+    <link rel="icon" type="image/png" href="assets/QuaseInéditoIcon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+
+    <script src="js/produtos.js" defer></script>
+    <script src="js/armazenamento.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/vitrine.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <a href="index.html" class="marca" aria-label="Quase Inédito - Página inicial">
+            <img src="assets/logo.png" alt="Quase Inédito">
+        </a>
+
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a href="index.html" aria-current="page">Início</a>
+            <a href="#catalogo">Comprar</a>
+            <a href="trocas.html">Trocas</a>
+            <a href="doacoes.html">Doações</a>
+            <a href="biblioteca.html">Biblioteca digital</a>
+            <a href="clube.html">Clube do livro</a>
+        </nav>
+
+        <form action="pesquisa.html" method="GET" class="barra-pesquisa">
+            <input type="search" name="q" placeholder="Pesquisar livros ou autores..."
+                aria-label="Pesquisar livros ou autores">
+            <button type="submit" aria-label="Pesquisar">
+                &#128269;
+            </button>
+        </form>
+
+        <div class="acoes-usuario">
+
+            <button type="button" class="link-login botao-abrir-carrinho" id="abrir-carrinho"
+                aria-label="Abrir carrinho de compras">
+                Carrinho
+                <span id="contador-carrinho">0</span>
+            </button>
+
+            <a href="login.html" class="link-login">Entrar</a>
+            <a href="cadastro.html" class="botao-cadastro">Criar conta</a>
+
+        </div>
+
+    </header>
+
+
+    <!-- OVERLAY DO CARRINHO -->
+    <div class="carrinho-overlay" id="carrinho-overlay"></div>
+
+
+    <!-- PAINEL LATERAL DO CARRINHO -->
+    <aside class="carrinho-lateral" id="carrinho-lateral" aria-label="Carrinho de compras" aria-hidden="true">
+
+        <div class="carrinho-cabecalho">
+            <h2>Meu carrinho</h2>
+
+            <button type="button" id="fechar-carrinho" class="carrinho-fechar" aria-label="Fechar carrinho">
+                &times;
+            </button>
+        </div>
+
+        <div class="carrinho-itens" id="carrinho-lateral-lista">
+            <p>Seu carrinho está vazio.</p>
+        </div>
+
+        <div class="carrinho-rodape">
+
+            <div class="carrinho-subtotal">
+                <span>Subtotal</span>
+                <strong id="carrinho-subtotal">R$ 0,00</strong>
+            </div>
+
+            <a href="carrinho.html" class="botao-principal">
+                Ver carrinho completo
+            </a>
+
+            <button type="button" id="continuar-comprando" class="botao-secundario">
+                Continuar comprando
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <main>
+
+        <!-- BANNER PRINCIPAL -->
+        <section class="banner">
+
+            <div class="banner-conteudo">
+
+                <span class="subtitulo">
+                    UM LIVRO, NOVAS POSSIBILIDADES
+                </span>
+
+                <h1>
+                    Todo livro merece uma
+                    <span>nova história.</span>
+                </h1>
+
+                <p>
+                    Histórias não precisam terminar na última página.
+                    Descubra livros, compartilhe leituras e dê novas
+                    possibilidades aos exemplares que já foram lidos.
+                </p>
+
+                <div class="banner-botoes">
+
+                    <a href="#catalogo" class="botao-principal">
+                        Explorar livros
+                    </a>
+
+                    <a href="trocas.html" class="botao-secundario">
+                        Conhecer as trocas
+                    </a>
+
+                </div>
+
+                <div class="banner-assinatura">
+                    <span>LER</span>
+                    <span>COMPARTILHAR</span>
+                    <span>RECOMEÇAR</span>
+                </div>
+
+            </div>
+
+
+            <div class="banner-imagem">
+                <div class="banner-imagem-fundo"></div>
+
+                <img src="assets/QuaseInéditoIcon.png" alt="Símbolo do Quase Inédito">
+            </div>
+
+        </section>
+
+
+        <!-- VITRINE DE LIVROS -->
+        <section class="vitrine" id="catalogo">
+
+            <div class="secao-titulo">
+
+                <span class="subtitulo">
+                    GARIMPO LITERÁRIO
+                </span>
+
+                <h2>
+                    Encontre sua próxima leitura.
+                </h2>
+
+                <p>
+                    Cada livro tem uma história. Talvez a próxima seja com você.
+                </p>
+
+            </div>
+
+
+            <div id="carrosseis-categorias">
+                <p>Carregando nossa seleção de livros...</p>
+            </div>
+
+
+            <!-- ELEMENTOS DE COMPATIBILIDADE COM main.js -->
+            <div hidden>
+
+                <input type="search" id="busca-livros">
+
+                <select id="filtro-categoria">
+                    <option value="">Todas as categorias</option>
+                </select>
+
+                <p id="quantidade-livros"></p>
+
+                <div id="catalogo-livros"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CIRCULAÇÃO DE LIVROS -->
+        <section class="circulacao">
+
+            <div class="secao-titulo">
+
+                <span class="subtitulo">
+                    CIRCULE HISTÓRIAS
+                </span>
+
+                <h2>
+                    Um livro pode ganhar muitas vidas.
+                </h2>
+
+                <p>
+                    Existem muitas maneiras de fazer uma história chegar a alguém.
+                </p>
+
+            </div>
+
+
+            <div class="circulacao-lista">
+
+                <article class="circulacao-card circulacao-comprar">
+
+                    <span class="circulacao-numero">01</span>
+
+                    <span class="circulacao-etiqueta">
+                        ENCONTRE
+                    </span>
+
+                    <h3>Comprar</h3>
+
+                    <p>
+                        Garimpe livros, encontre novas histórias
+                        e descubra sua próxima leitura.
+                    </p>
+
+                    <a href="#catalogo">
+                        Explorar livros
+                        <span aria-hidden="true">&rarr;</span>
+                    </a>
+
+                </article>
+
+
+                <article class="circulacao-card circulacao-trocar">
+
+                    <span class="circulacao-numero">02</span>
+
+                    <span class="circulacao-etiqueta">
+                        COMPARTILHE
+                    </span>
+
+                    <h3>Trocar</h3>
+
+                    <p>
+                        Dê uma nova oportunidade aos seus livros
+                        e encontre outras histórias.
+                    </p>
+
+                    <a href="trocas.html">
+                        Conhecer as trocas
+                        <span aria-hidden="true">&rarr;</span>
+                    </a>
+
+                </article>
+
+
+                <article class="circulacao-card circulacao-doar">
+
+                    <span class="circulacao-numero">03</span>
+
+                    <span class="circulacao-etiqueta">
+                        TRANSFORME
+                    </span>
+
+                    <h3>Doar</h3>
+
+                    <p>
+                        Compartilhe seus exemplares e permita
+                        que outras pessoas descubram novas leituras.
+                    </p>
+
+                    <a href="doacoes.html">
+                        Conhecer as doações
+                        <span aria-hidden="true">&rarr;</span>
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CLUBE DO LIVRO -->
+        <section class="clube">
+
+            <div class="clube-conteudo">
+
+                <span class="subtitulo">
+                    NOSSA COMUNIDADE
+                </span>
+
+                <h2>
+                    Histórias ficam melhores quando compartilhadas.
+                </h2>
+
+                <p>
+                    Um espaço para leitores, conversas e descobertas.
+                    Participe do Clube do Livro, conheça outras pessoas
+                    e compartilhe suas experiências literárias.
+                </p>
+
+                <a href="clube.html" class="botao-principal">
+                    Conhecer o clube
+                </a>
+
+            </div>
+
+
+            <div class="clube-detalhe">
+
+                <img src="assets/Carimbo.png" alt="" aria-hidden="true">
+
+                <span>
+                    TODA LEITURA<br>
+                    DEIXA UMA MARCA.
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- CHAMADA FINAL -->
+        <section class="chamada-final">
+
+            <span class="subtitulo">
+                QUASE INÉDITO
+            </span>
+
+            <h2>
+                A próxima história pode começar aqui.
+            </h2>
+
+            <a href="#catalogo" class="botao-principal">
+                Encontrar um livro
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <div class="rodape-conteudo">
+
+            <div class="rodape-marca">
+
+                <a href="index.html" aria-label="Voltar para o início">
+                    <img src="assets/logo.png" alt="Quase Inédito">
+                </a>
+
+                <p>
+                    Livros que merecem novas histórias.
+                </p>
+
+            </div>
+
+
+            <div class="rodape-links">
+
+                <div>
+                    <h3>Explore</h3>
+                    <a href="#catalogo">Comprar livros</a>
+                    <a href="trocas.html">Trocas</a>
+                    <a href="doacoes.html">Doações</a>
+                </div>
+
+                <div>
+                    <h3>Comunidade</h3>
+                    <a href="clube.html">Clube do livro</a>
+                    <a href="biblioteca.html">Biblioteca digital</a>
+                </div>
+
+                <div>
+                    <h3>Sua conta</h3>
+                    <a href="login.html">Entrar</a>
+                    <a href="cadastro.html">Criar conta</a>
+                    <a href="carrinho.html">Carrinho</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="rodape-base">
+
+            <p>
+                &copy; 2026 Quase Inédito. Projeto educacional.
+            </p>
+
+            <span>
+                Uma história nunca termina de verdade.
+            </span>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

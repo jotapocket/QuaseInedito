@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Encontre livros gratuitos e compartilhe histórias no Quase Inédito.">
+    <title>Quase Inédito | Doações</title>
+
+    <link rel="icon" type="image/png" href="assets/QuaseInéditoIcon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/doacoes.css">
+
+    <script src="js/produtos.js" defer></script>
+    <script src="js/armazenamento.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/doacoes.js" defer></script>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <a class="marca" href="index.html">
+            <img src="assets/logo.png" alt="Quase Inédito">
+        </a>
+
+        <nav class="navegacao">
+            <a href="index.html">Início</a>
+            <a href="index.html#catalogo">Comprar</a>
+            <a href="trocas.html">Trocas</a>
+            <a href="doacoes.html">Doações</a>
+            <a href="biblioteca.html">Biblioteca digital</a>
+            <a href="clube.html">Clube do livro</a>
+        </nav>
+
+        <form action="pesquisa.html" method="GET" class="barra-pesquisa">
+            <input
+                type="search"
+                name="q"
+                placeholder="Pesquisar livros ou autores..."
+                aria-label="Pesquisar livros ou autores"
+            >
+            <button type="submit" aria-label="Pesquisar">&#128269;</button>
+        </form>
+
+        <div class="acoes-usuario">
+            <a href="carrinho.html" class="link-login">
+                Carrinho <span id="contador-carrinho">0</span>
+            </a>
+            <a href="login.html" class="link-login">Entrar</a>
+            <a href="cadastro.html" class="botao-cadastro">Cadastrar</a>
+        </div>
+
+    </header>
+
+    <main class="pagina-doacoes">
+
+        <section class="apresentacao-doacoes">
+
+            <div class="apresentacao-doacoes-texto">
+
+                <span class="subtitulo-doacoes">
+                    COMPARTILHE HISTÓRIAS
+                </span>
+
+                <h1>
+                    Uma boa história merece ser compartilhada.
+                </h1>
+
+                <p>
+                    Encontre livros que estão esperando por um novo leitor.
+                    Aqui, você pode solicitar gratuitamente um exemplar
+                    e dar continuidade à sua história.
+                </p>
+
+            </div>
+
+            <div class="apresentacao-doacoes-simbolo">
+                <img
+                    src="assets/QuaseInéditoIcon.png"
+                    alt=""
+                    aria-hidden="true"
+                >
+            </div>
+
+        </section>
+
+        <section class="secao-doacoes">
+
+            <div class="cabecalho-doacoes">
+
+                <div>
+                    <span class="identificador-doacoes">
+                        CIRCULAÇÃO DE LIVROS
+                    </span>
+
+                    <h2>Livros esperando por você</h2>
+
+                    <p>
+                        Conheça os exemplares disponibilizados pela comunidade.
+                    </p>
+                </div>
+
+                <span class="etiqueta-gratuita">
+                    100% gratuitos
+                </span>
+
+            </div>
+
+            <div class="livros-lista" id="livros-doacao">
+                <p>Carregando livros disponíveis...</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>Quase Inédito — Todo livro merece uma nova história.</p>
+    </footer>
+
+</body>
+
+</html>
